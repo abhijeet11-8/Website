@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Lora } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
+import { PageWrapper } from "@/components/page-wrapper";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -28,11 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${roboto.variable} ${lora.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased flex flex-col min-h-screen">
         <Header />
-        <main className="container mx-auto max-w-4xl p-4 md:p-8 animate-fade-in">
-          {children}
-        </main>
+        <PageWrapper>{children}</PageWrapper>
         <Toaster />
       </body>
     </html>
