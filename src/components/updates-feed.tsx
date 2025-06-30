@@ -1,14 +1,12 @@
 
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Sparkles, Send, Loader2, ImagePlus } from "lucide-react";
-import { getSummaryAction } from "@/app/actions";
-import { useToast } from "@/hooks/use-toast";
+import { Send, ImagePlus } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -42,27 +40,6 @@ export function UpdatesFeed() {
   const [updates, setUpdates] = useState<Update[]>(initialUpdates);
   const [updateText, setUpdateText] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isPending, startTransition] = useTransition();
-  const { toast } = useToast();
-
-  const handleSummarize = () => {
-    startTransition(async () => {
-      const result = await getSummaryAction(updateText);
-      if (result.error) {
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: result.error,
-        });
-      } else if (result.summary) {
-        setUpdateText(result.summary);
-        toast({
-          title: "Success!",
-          description: "Your update has been summarized.",
-        });
-      }
-    });
-  };
 
   const handlePostUpdate = () => {
     if (updateText.trim() === "") return;
@@ -129,29 +106,15 @@ export function UpdatesFeed() {
                   type="button"
                   variant="outline"
                   size="icon"
-                  disabled={isPending}
                 >
                   <ImagePlus />
                   <span className="sr-only">Add Image</span>
-                </Button>
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={handleSummarize}
-                  disabled={isPending || updateText.length < 20}
-                >
-                  {isPending ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <Sparkles className="mr-2 h-4 w-4" />
-                  )}
-                  Summarize
                 </Button>
               </div>
               <Button
                 type="button"
                 onClick={handlePostUpdate}
-                disabled={isPending || updateText.trim() === ""}
+                disabled={updateText.trim() === ""}
               >
                 <Send className="mr-2 h-4 w-4" />
                 Post Update
