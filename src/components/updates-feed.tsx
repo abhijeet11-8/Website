@@ -35,8 +35,6 @@ const initialUpdates: Update[] = [
     author: "Alex Doe",
     date: "2 days ago",
     text: "Just deployed a new version of the project website with improved performance and a refreshed UI. Exciting to see the positive feedback from users already!",
-    imageUrl: "https://placehold.co/800x450.png",
-    imageHint: "project dashboard",
   },
 ];
 
@@ -164,29 +162,10 @@ export function UpdatesFeed() {
       </Dialog>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold">Recent Updates</h2>
+        <h2 className="text-2xl font-bold text-primary">Recent Updates</h2>
         {updates.map((update) => (
           <Card key={update.id}>
             <CardContent className="p-6 space-y-4">
-              <div className="flex items-center gap-3">
-                <Avatar className="h-11 w-11">
-                  <AvatarImage
-                    src="https://placehold.co/150x150.png"
-                    alt={update.author}
-                    data-ai-hint="professional portrait"
-                  />
-                  <AvatarFallback>
-                    {update.author.slice(0, 2).toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-semibold leading-none">{update.author}</p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {update.date}
-                  </p>
-                </div>
-              </div>
-
               <p className="whitespace-pre-wrap text-foreground/90">
                 {update.text}
               </p>

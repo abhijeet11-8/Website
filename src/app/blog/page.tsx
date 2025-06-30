@@ -6,8 +6,6 @@ const blogPosts = [
     title: "Mastering React Hooks: A Deep Dive",
     description:
       "Explore the power of React Hooks and how they can simplify your component logic and state management.",
-    imageUrl: "https://placehold.co/800x400.png",
-    imageHint: "code screen",
     date: "July 15, 2024",
     tags: ["React", "TypeScript", "Web Dev"],
   },
@@ -37,7 +35,7 @@ export default function BlogPage() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl font-bold">My Blog</h1>
+        <h1 className="text-4xl font-bold text-primary">My Blog</h1>
         <p className="mt-2 text-lg text-muted-foreground">
           Writing about things I'm learning and building.
         </p>

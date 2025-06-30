@@ -14,8 +14,8 @@ import { ArrowRight } from "lucide-react";
 type BlogPostCardProps = {
   title: string;
   description: string;
-  imageUrl: string;
-  imageHint: string;
+  imageUrl?: string;
+  imageHint?: string;
   date: string;
   tags: string[];
   slug: string;
@@ -32,18 +32,20 @@ export function BlogPostCard({
 }: BlogPostCardProps) {
   return (
     <Card className="flex flex-col overflow-hidden transition-all hover:shadow-lg">
-      <CardHeader className="p-0">
-        <Link href={`/blog/${slug}`} className="block">
-          <Image
-            src={imageUrl}
-            alt={title}
-            width={800}
-            height={400}
-            className="h-auto w-full object-cover aspect-[2/1]"
-            data-ai-hint={imageHint}
-          />
-        </Link>
-      </CardHeader>
+      {imageUrl && (
+        <CardHeader className="p-0">
+          <Link href={`/blog/${slug}`} className="block">
+            <Image
+              src={imageUrl}
+              alt={title}
+              width={800}
+              height={400}
+              className="h-auto w-full object-cover aspect-[2/1]"
+              data-ai-hint={imageHint}
+            />
+          </Link>
+        </CardHeader>
+      )}
       <CardContent className="flex-grow p-6 space-y-3">
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
