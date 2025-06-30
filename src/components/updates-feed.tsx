@@ -3,13 +3,7 @@
 
 import { useState, useTransition } from "react";
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -23,6 +17,16 @@ import {
 import { getSummaryAction } from "@/app/actions";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "./ui/separator";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 type Update = {
   id: number;
@@ -47,6 +51,7 @@ const initialUpdates: Update[] = [
 export function UpdatesFeed() {
   const [updates, setUpdates] = useState<Update[]>(initialUpdates);
   const [updateText, setUpdateText] = useState("");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
 
@@ -80,30 +85,55 @@ export function UpdatesFeed() {
     };
     setUpdates([newUpdate, ...updates]);
     setUpdateText("");
+    setIsDialogOpen(false);
   };
 
   return (
     <div className="space-y-8">
-      <Card>
-        <CardHeader>
-          <CardTitle className="font-headline text-2xl">
-            Post an Update
-          </CardTitle>
-          <CardDescription>
-            Share your latest work or project progress.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogTrigger asChild>
+          <Card className="hover:bg-muted transition-colors cursor-pointer">
+            <CardContent className="p-4 flex items-center gap-4">
+              <Avatar>
+                <AvatarImage
+                  src="https://placehold.co/150x150.png"
+                  alt="Alex Doe"
+                  data-ai-hint="professional portrait"
+                />
+                <AvatarFallback>AD</AvatarFallback>
+              </Avatar>
+              <span className="flex-grow text-muted-foreground">
+                Start a post
+              </span>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="pointer-events-none text-muted-foreground"
+              >
+                <ImagePlus />
+              </Button>
+            </CardContent>
+          </Card>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[525px]">
+          <DialogHeader>
+            <DialogTitle>Create a post</DialogTitle>
+            <DialogDescription>
+              Share your latest work or project progress.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
             <Textarea
               name="updateText"
               placeholder="What have you been working on?"
               value={updateText}
               onChange={(e) => setUpdateText(e.target.value)}
-              rows={4}
+              rows={6}
               className="bg-background"
             />
-            <div className="flex flex-wrap justify-between items-center gap-2">
+          </div>
+          <DialogFooter>
+            <div className="flex flex-wrap justify-between items-center gap-2 w-full">
               <div className="flex gap-2">
                 <Button
                   type="button"
@@ -137,9 +167,9 @@ export function UpdatesFeed() {
                 Post Update
               </Button>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       <div className="space-y-6">
         <h2 className="text-2xl font-headline font-semibold">Recent Updates</h2>
