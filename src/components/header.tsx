@@ -34,7 +34,7 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="w-full border-b border-border/40 bg-background">
       <div className="container mx-auto flex h-14 max-w-4xl items-center">
         <Link href="/" className="mr-6 flex items-center gap-2 group">
           <Code2 className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />

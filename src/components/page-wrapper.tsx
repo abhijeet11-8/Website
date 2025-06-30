@@ -20,8 +20,8 @@ export function PageWrapper({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className={cn(getBackgroundClass(), 'flex-grow transition-all duration-500')}>
-      <main className="container mx-auto max-w-4xl p-4 md:p-8 animate-fade-in">
+    <div className={cn(getBackgroundClass(), 'flex-grow transition-all duration-500 relative')}>
+      <main className="container mx-auto max-w-4xl p-4 md:p-8 animate-fade-in relative">
         {children}
       </main>
     </div>

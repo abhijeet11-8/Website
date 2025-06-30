@@ -67,11 +67,29 @@
   }
 }
 
+@keyframes scroll-grid {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-3rem, -3rem); }
+}
+
 @layer utilities {
   .bg-home {
     background-color: hsl(var(--background));
-    background-image: radial-gradient(circle at top left, hsl(var(--primary) / 0.05), transparent 40vmax),
-      radial-gradient(circle at bottom right, hsl(var(--accent) / 0.05), transparent 40vmax);
+    background-image: radial-gradient(circle at top left, hsl(var(--primary) / 0.15), transparent 40vmax),
+      radial-gradient(circle at bottom right, hsl(var(--accent) / 0.15), transparent 40vmax);
+  }
+  .bg-home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    animation: scroll-grid 20s linear infinite;
+    -webkit-mask-image: radial-gradient(circle, white 20%, transparent 80%);
+    mask-image: radial-gradient(circle, white 20%, transparent 80%);
   }
   .bg-blog {
     background-color: hsl(var(--background));
