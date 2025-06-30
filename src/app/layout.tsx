@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-    <pre className="absolute -top-1/4 left-1/4 -right-1/4 -bottom-1/4 font-code text-[10px] text-foreground/30 whitespace-pre-wrap">
+    <pre className="absolute inset-y-0 left-1/2 right-8 font-code text-[10px] text-foreground/40 whitespace-pre-wrap">
       <code
         dangerouslySetInnerHTML={{
           __html: `<span class="code-bg-token-keyword">import</span> numpy <span class="code-bg-token-keyword">as</span> np
