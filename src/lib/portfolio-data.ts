@@ -1,3 +1,4 @@
+
 /**
  * =====================================================================================
  *                                  PORTFOLIO DATA
@@ -27,7 +28,7 @@ export const portfolioData = {
   name: "Alex Doe",
   bio: "Senior Software Engineer specializing in Next.js, AI, and creating beautiful user experiences.",
   avatarUrl:
-    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NiAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTI4IiBjeT0iMTI4IiByPSIxMjgiIGZpbGw9ImhzbCh2YXIoLS1jYXJkKSkiLz48cGF0aCBkPSJNODAgMTc2IEwxMjggODAgTDE3NiAxNzYgWiIgc3Ryb2tlPSJoc2wodmFyKC0tcHJpbWFyeSkpIiBzdHJva2Utd2lkdGg9IjEyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIxMjgiIGN5PSIxNDgiIHI9IjEyIiBmaWxsPSJoc2wodmFyKC0tcHJpbWFyeSkpIi8+PC9zdmc+",
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NiAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHJ4PSIxMjgiIGZpbGw9ImhzbCh2YXIoLS1wcmltYXJ5KSkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTI4IiBmb250LWZhbWlseT0idmFyKC0tZm9udC1oZWFkbGluZSkiIGZpbGw9ImhzbCh2YXIoLS1wcmltYXJ5LWZvcmVncm91bmQpKSI+QTwvdGV4dD48L3N2Zz4=",
 
   /**
    * --- RESUME & CONTACT ---
