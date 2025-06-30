@@ -6,17 +6,9 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Sparkles,
-  Send,
-  Loader2,
-  ImagePlus,
-  User,
-  Calendar,
-} from "lucide-react";
+import { Sparkles, Send, Loader2, ImagePlus } from "lucide-react";
 import { getSummaryAction } from "@/app/actions";
 import { useToast } from "@/hooks/use-toast";
-import { Separator } from "./ui/separator";
 import {
   Dialog,
   DialogContent,
@@ -172,17 +164,29 @@ export function UpdatesFeed() {
       </Dialog>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-headline font-semibold">Recent Updates</h2>
+        <h2 className="text-2xl font-bold">Recent Updates</h2>
         {updates.map((update) => (
           <Card key={update.id}>
-            <CardContent className="p-6">
-              <div className="mb-4 flex items-center gap-3 text-sm">
-                <User className="h-4 w-4 text-muted-foreground" />
-                <span className="font-semibold">{update.author}</span>
-                <Separator orientation="vertical" className="h-4" />
-                <Calendar className="h-4 w-4 text-muted-foreground" />
-                <span className="text-muted-foreground">{update.date}</span>
+            <CardContent className="p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <Avatar className="h-11 w-11">
+                  <AvatarImage
+                    src="https://placehold.co/150x150.png"
+                    alt={update.author}
+                    data-ai-hint="professional portrait"
+                  />
+                  <AvatarFallback>
+                    {update.author.slice(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-semibold leading-none">{update.author}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {update.date}
+                  </p>
+                </div>
               </div>
+
               <p className="whitespace-pre-wrap text-foreground/90">
                 {update.text}
               </p>

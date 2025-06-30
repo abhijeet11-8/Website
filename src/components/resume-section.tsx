@@ -15,7 +15,7 @@ export function ResumeSection() {
     <Card>
       <CardHeader className="flex-row items-center justify-between">
         <div>
-          <CardTitle className="font-headline text-2xl">Resume</CardTitle>
+          <CardTitle className="text-2xl">Resume</CardTitle>
           <CardDescription>My professional experience and skills.</CardDescription>
         </div>
         <Button variant="ghost" size="lg" asChild className="shrink-0">
@@ -27,7 +27,7 @@ export function ResumeSection() {
       </CardHeader>
       <CardContent className="space-y-8">
         <div>
-          <h3 className="mb-4 flex items-center text-xl font-headline font-semibold">
+          <h3 className="mb-4 flex items-center text-xl font-semibold">
             <Briefcase className="mr-3 h-5 w-5 text-primary" />
             Experience
           </h3>
@@ -58,7 +58,7 @@ export function ResumeSection() {
         </div>
         <Separator />
         <div>
-          <h3 className="mb-4 flex items-center text-xl font-headline font-semibold">
+          <h3 className="mb-4 flex items-center text-xl font-semibold">
             <GraduationCap className="mr-3 h-5 w-5 text-primary" />
             Education
           </h3>
@@ -74,7 +74,7 @@ export function ResumeSection() {
         </div>
         <Separator />
         <div>
-          <h3 className="mb-4 flex items-center text-xl font-headline font-semibold">
+          <h3 className="mb-4 flex items-center text-xl font-semibold">
             <Star className="mr-3 h-5 w-5 text-primary" />
             Skills
           </h3>
