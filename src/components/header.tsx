@@ -40,27 +40,33 @@ export function Header() {
           <Code2 className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
           <span className="font-bold">{portfolioData.name}</span>
         </Link>
-        <div className="hidden md:block">
-          <NavLinks />
-        </div>
-        <div className="ml-auto md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <Link href="/" className="mb-6 flex items-center gap-2 group">
-                <Code2 className="h-6 w-6 text-primary" />
-                <span className="font-bold">{portfolioData.name}</span>
-              </Link>
-              <div className="flex flex-col">
-                <NavLinks className="flex-col !items-start gap-6" />
-              </div>
-            </SheetContent>
-          </Sheet>
+        
+        <div className="ml-auto flex items-center">
+            {/* Desktop Nav */}
+            <div className="hidden md:block">
+                <NavLinks />
+            </div>
+
+            {/* Mobile Nav */}
+            <div className="md:hidden">
+                <Sheet>
+                    <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                        <Menu className="h-5 w-5" />
+                        <span className="sr-only">Toggle Menu</span>
+                    </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right">
+                    <Link href="/" className="mb-6 flex items-center gap-2 group">
+                        <Code2 className="h-6 w-6 text-primary" />
+                        <span className="font-bold">{portfolioData.name}</span>
+                    </Link>
+                    <div className="flex flex-col">
+                        <NavLinks className="flex-col !items-start gap-6" />
+                    </div>
+                    </SheetContent>
+                </Sheet>
+            </div>
         </div>
       </div>
     </header>
