@@ -67,41 +67,26 @@
   }
 }
 
-@keyframes scroll-grid {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-3rem, -3rem); }
-}
-
 @layer utilities {
-  .bg-home {
-    background-color: hsl(var(--background));
-    background-image: radial-gradient(circle at top left, hsl(var(--primary) / 0.15), transparent 40vmax),
-      radial-gradient(circle at bottom right, hsl(var(--accent) / 0.15), transparent 40vmax);
+  .code-bg-token-comment {
+    color: hsl(var(--muted-foreground) / 0.5);
   }
-  .bg-home::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-image: 
-      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
-      linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px);
-    background-size: 3rem 3rem;
-    animation: scroll-grid 20s linear infinite;
-    -webkit-mask-image: radial-gradient(circle, white 20%, transparent 80%);
-    mask-image: radial-gradient(circle, white 20%, transparent 80%);
+  .code-bg-token-keyword {
+    color: hsl(var(--primary) / 0.6);
   }
-  .bg-blog {
-    background-color: hsl(var(--background));
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.07) 1px, transparent 1px),
-      linear-gradient(to right, hsl(var(--border) / 0.07) 1px, hsl(var(--background)) 1px);
-    background-size: 3rem 3rem;
+  .code-bg-token-function {
+    color: hsl(var(--accent) / 0.8);
   }
-  .bg-other {
-    background-color: hsl(var(--background));
-    background-image:
-      radial-gradient(ellipse at 70% 20%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 30% 80%, hsl(var(--accent) / 0.08) 0%, transparent 50%);
+  .code-bg-token-string {
+    color: hsl(var(--foreground) / 0.6);
+  }
+  .code-bg-token-operator {
+    color: hsl(var(--primary) / 0.6);
+  }
+  .code-bg-token-punctuation {
+    color: hsl(var(--foreground) / 0.6);
+  }
+  .code-bg-token-number {
+    color: hsl(var(--accent) / 0.8);
   }
 }
