@@ -35,15 +35,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
+      <div className="container flex h-14 items-center">
+        <Link href="/" className="mr-6 flex items-center gap-2 group">
           <Code2 className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
           <span className="font-bold">{portfolioData.name}</span>
         </Link>
         <div className="hidden md:block">
           <NavLinks />
         </div>
-        <div className="md:hidden">
+        <div className="ml-auto md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
