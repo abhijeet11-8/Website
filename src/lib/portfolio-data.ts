@@ -13,7 +13,7 @@
  * 4.  **Education**: Add or remove your education details.
  * 5.  **Skills**: List your skills.
  *
- * For post data, please see `src/lib/posts-data.ts`.
+ * For post data, please see the dedicated files in `src/lib/`.
  *
  * =====================================================================================
  */
@@ -27,7 +27,7 @@ export const portfolioData = {
   name: "Alex Doe",
   bio: "Senior Software Engineer specializing in Next.js, AI, and creating beautiful user experiences.",
   avatarUrl:
-    "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjEyOCIgY3k9IjEyOCIgcj0iMTI4IiBmaWxsPSJoc2wodmFyKC0tY2FyZCkpIi8+PHBhdGggZD0iTTE3MiwxNTJhNDQsNDQsMCwwLDEtODgsMFoiIGZpbGw9ImhzbCh2YXIoLS1iYWNrZ3JvdW5kKSkiIHN0cm9rZT0iaHNsKHZhcigtLWJvcmRlcikpIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjgiLz48Y2lyY2xlIGN4PSIxMjgiIGN5PSI5MiIgcj0iNDgiIGZpbGw9ImhzbCh2YXIoLS1iYWNrZ3JvdW5kKSkiIHN0cm9rZT0iaHNsKHZhcigtLWJvcmRlcikpIiBzdHJva2Utd2lkdGg9IjgiLz48Y2lyY2xlIGN4PSIxMTIiIGN5PSI5NiIgcj0iOCIgZmlsbD0iaHNsKHZhcigtLXByaW1hcnkpKSIvPjxjaXJjbGUgY3g9IjE0NCIgY3k9Ijk2IiByPSI4IiBmaWxsPSJoc2wodmFyKC0tcHJpbWFyeSkpIi8+PHBhdGggZD0iTTEyMCwxMTZhMTIsMTIsMCwwLDEsMTYsMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJoc2wodmFyKC0tYm9yZGVyKSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI4Ii8+PHBhdGggZD0iTTE1OC40LDU0LjRhMzIuMSwzMi4xLDAsMCwxLDEyLjgtMS42LDMyLDMyLDAsMCwxLDE0LjQsNDEuNkwxNjAsMTEyIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCh2YXIoLS1ib3JkZXIpKSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjgiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSI4MCIgcj0iMTIiIGZpbGw9ImhzbCh2YXIoLS1wcmltYXJ5KSkiLz48L3N2Zz4=",
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NiAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTI4IiBjeT0iMTI4IiByPSIxMjgiIGZpbGw9ImhzbCh2YXIoLS1jYXJkKSkiLz48cGF0aCBkPSJNODAgMTc2IEwxMjggODAgTDE3NiAxNzYgWiIgc3Ryb2tlPSJoc2wodmFyKC0tcHJpbWFyeSkpIiBzdHJva2Utd2lkdGg9IjEyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIxMjgiIGN5PSIxNDgiIHI9IjEyIiBmaWxsPSJoc2wodmFyKC0tcHJpbWFyeSkpIi8+PC9zdmc+",
 
   /**
    * --- RESUME & CONTACT ---

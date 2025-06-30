@@ -1,8 +1,6 @@
 
 import { BlogPostCard } from "@/components/blog-post-card";
-import { postsData } from "@/lib/posts-data";
-
-const { otherThanWorkPosts } = postsData;
+import { otherThanWorkPosts } from "@/lib/other-than-work-data";
 
 export default function OtherThanWorkPage() {
   return (
