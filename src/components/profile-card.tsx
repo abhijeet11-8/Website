@@ -20,7 +20,7 @@ export function ProfileCard({ name, bio, avatarUrl }: ProfileCardProps) {
             <AvatarFallback>{name.charAt(0)}</AvatarFallback>
           </Avatar>
           <div className="space-y-1.5">
-            <h1 className="text-4xl font-bold text-primary">{name}</h1>
+            <h1 className="text-4xl font-bold font-headline text-primary">{name}</h1>
             <p className="text-lg text-muted-foreground">{bio}</p>
           </div>
         </div>

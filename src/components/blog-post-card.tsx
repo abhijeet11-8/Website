@@ -54,7 +54,7 @@ export function BlogPostCard({
             </Badge>
           ))}
         </div>
-        <CardTitle className="text-xl font-bold">
+        <CardTitle className="text-xl font-bold font-headline">
           <Link href={`/blog/${slug}`}>{title}</Link>
         </CardTitle>
         <CardDescription>{description}</CardDescription>

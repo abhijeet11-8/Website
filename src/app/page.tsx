@@ -19,7 +19,7 @@ export default function Home() {
       <ResumeSection />
 
       <section id="contact" className="text-center py-8">
-        <h2 className="text-2xl font-bold mb-6 text-primary">Get In Touch</h2>
+        <h2 className="text-2xl font-bold font-headline mb-6 text-primary">Get In Touch</h2>
         <ContactLinks />
       </section>
     </div>

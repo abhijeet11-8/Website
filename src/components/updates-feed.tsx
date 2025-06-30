@@ -120,7 +120,7 @@ export function UpdatesFeed() {
       </Dialog>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-primary">Recent Updates</h2>
+        <h2 className="text-2xl font-bold font-headline text-primary">Recent Updates</h2>
         {updates.map((update) => (
           <Card key={update.id}>
             <CardContent className="p-6 space-y-4">
