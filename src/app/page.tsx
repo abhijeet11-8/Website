@@ -14,7 +14,7 @@ export default function Home() {
             About Me
           </h1>
           <p className="mt-2 text-lg text-muted-foreground">
-            A brief introduction to my work and passion.
+            Explore my work, writing, and what I'm currently building.
           </p>
         </div>
         <ProfileCard
