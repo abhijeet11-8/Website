@@ -1,7 +1,8 @@
-import { BlogPostCard } from "@/components/blog-post-card";
-import { portfolioData } from "@/lib/portfolio-data";
 
-const { otherThanWorkPosts } = portfolioData;
+import { BlogPostCard } from "@/components/blog-post-card";
+import { postsData } from "@/lib/posts-data";
+
+const { otherThanWorkPosts } = postsData;
 
 export default function OtherThanWorkPage() {
   return (

@@ -1,8 +1,8 @@
 
 import { BlogPostCard } from "@/components/blog-post-card";
-import { portfolioData } from "@/lib/portfolio-data";
+import { postsData } from "@/lib/posts-data";
 
-const { blogPosts } = portfolioData;
+const { blogPosts } = postsData;
 
 export default function BlogPage() {
   return (
