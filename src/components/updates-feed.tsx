@@ -61,7 +61,6 @@ export function UpdatesFeed() {
                 <AvatarImage
                   src={portfolioData.avatarUrl}
                   alt={portfolioData.name}
-                  data-ai-hint="professional portrait"
                 />
                 <AvatarFallback>{portfolioData.name.charAt(0)}</AvatarFallback>
               </Avatar>
@@ -125,6 +124,19 @@ export function UpdatesFeed() {
         {updates.map((update) => (
           <Card key={update.id}>
             <CardContent className="p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <Avatar>
+                  <AvatarImage
+                    src={portfolioData.avatarUrl}
+                    alt={update.author}
+                  />
+                  <AvatarFallback>{update.author.charAt(0)}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-semibold">{update.author}</p>
+                  <p className="text-sm text-muted-foreground">{update.date}</p>
+                </div>
+              </div>
               <p className="whitespace-pre-wrap text-foreground/90">
                 {update.text}
               </p>

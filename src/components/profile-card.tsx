@@ -16,7 +16,6 @@ export function ProfileCard({ name, bio, avatarUrl }: ProfileCardProps) {
             <AvatarImage
               src={avatarUrl}
               alt={name}
-              data-ai-hint="professional portrait"
             />
             <AvatarFallback>{name.charAt(0)}</AvatarFallback>
           </Avatar>

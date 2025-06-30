@@ -1,4 +1,3 @@
-
 /**
  * =====================================================================================
  *                                  PORTFOLIO DATA
@@ -14,7 +13,8 @@
  * 4.  **Education**: Add or remove your education details.
  * 5.  **Skills**: List your skills.
  * 6.  **Blog Posts**: Create new blog posts.
- * 7.  **Initial Updates**: Your first post on the updates feed.
+ * 7.  **Other Than Work**: Posts for your personal life page.
+ * 8.  **Initial Updates**: Your first post on the updates feed.
  *
  * =====================================================================================
  */
@@ -22,10 +22,13 @@ export const portfolioData = {
   /**
    * --- PERSONAL INFORMATION ---
    * - Your name, bio, and the URL to your avatar image.
+   * - The current avatar is a default one. You can replace the data URI
+   *   with a URL to your own image, e.g., "https://placehold.co/150x150.png"
    */
   name: "Alex Doe",
   bio: "Senior Software Engineer specializing in Next.js, AI, and creating beautiful user experiences.",
-  avatarUrl: "https://placehold.co/150x150.png",
+  avatarUrl:
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjEyOCIgY3k9IjEyOCIgcj0iMTIwIiBmaWxsPSJoc2wodmFyKC0tY2FyZCkpIiBzdHJva2U9ImhzbCh2YXIoLS1ib3JkZXIpKSIgc3Ryb2tlLXdpZHRoPSI4Ii8+PGNpcmNsZSBjeD0iMTI4IiBjeT0iMTA4IiByPSI0OCIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMTI4LDUyYTY4LDY4LDAsMCwwLTU3LjgsMTAzLjQsMTIwLjcsMTIwLjcsMCwwLDAsMTE1LjYsMEE2OCw2OCwwLDAsMCwxMjgsNTJaIiBmaWxsPSJ3aGl0ZSIvPjxjaXJjbGUgY3g9IjE3MiIgY3k9IjEwOCIgcj0iMTYiIGZpbGw9ImhzbCh2YXIoLS1wcmltYXJ5KSkiLz48cGF0aCBkPSJNMTI4LDE1NmE3Miw3MiwwLDAsMCw2MS41LTMwLjcsOCw4LDAsMSwwLTEzLjgtOC4yLDU2LDU2LDAsMCwxLTk1LjQsMCw4LDgsMCwwLDAtMTMuOCw4LjJBNzIsNzIsMCwwLDAsMTI4LDE1NloiIGZpbGw9ImhzbCh2YXIoLS1wcmltYXJ5KSkiLz48L3N2Zz4=",
 
   /**
    * --- RESUME & CONTACT ---
@@ -123,6 +126,33 @@ export const portfolioData = {
       imageHint: "design system",
       date: "July 1, 2024",
       tags: ["CSS", "TailwindCSS", "Design"],
+    },
+  ],
+
+  /**
+   * --- OTHER THAN WORK POSTS ---
+   * - Posts for your "Other Than Work" page.
+   */
+  otherThanWorkPosts: [
+    {
+      slug: "hiking-adventure",
+      title: "My Latest Hiking Adventure",
+      description:
+        "Explored some beautiful trails last weekend. The views were absolutely breathtaking!",
+      date: "July 20, 2024",
+      tags: ["Hiking", "Nature", "Outdoors"],
+      imageUrl: "https://placehold.co/800x400.png",
+      imageHint: "mountain landscape",
+    },
+    {
+      slug: "new-recipe",
+      title: "Trying Out a New Recipe",
+      description:
+        "Spent the evening cooking up a storm. This new pasta dish is a definite keeper.",
+      date: "July 18, 2024",
+      tags: ["Cooking", "Food", "Hobbies"],
+      imageUrl: "https://placehold.co/800x400.png",
+      imageHint: "pasta dish",
     },
   ],
 
