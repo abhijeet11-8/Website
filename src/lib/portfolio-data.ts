@@ -27,7 +27,7 @@ export const portfolioData = {
    */
   name: "Alex Doe",
   bio: "Senior Software Engineer specializing in Next.js, AI, and creating beautiful user experiences.",
-  avatarUrl: "data:image/svg+xml;utf8,%3Csvg%20width='150'%20height='150'%20viewBox='0%200%20150%20150'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle%20cx='75'%20cy='75'%20r='75'%20fill='%231e1e1e'/%3E%3Ctext%20x='50%25'%20y='50%25'%20dominant-baseline='central'%20text-anchor='middle'%20font-family='Montserrat,%20sans-serif'%20font-size='80'%20font-weight='700'%20fill='%2380CBC4'%20dy='.05em'%3EA%3C/text%3E%3C/svg%3E",
+  avatarUrl: "https://placehold.co/150x150.png",
 
   /**
    * --- RESUME & CONTACT ---
