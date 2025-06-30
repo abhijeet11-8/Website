@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-    <pre className="absolute -top-1/4 left-0 -right-1/2 -bottom-1/4 font-code text-[10px] text-foreground/30 whitespace-pre-wrap">
+    <pre className="absolute -top-1/4 left-1/4 -right-1/4 -bottom-1/4 font-code text-[10px] text-foreground/30 whitespace-pre-wrap">
       <code
         dangerouslySetInnerHTML={{
           __html: `<span class="code-bg-token-keyword">import</span> numpy <span class="code-bg-token-keyword">as</span> np
@@ -135,7 +135,6 @@ prediction <span class="code-bg-token-operator">=</span> <span class="code-bg-to
         }}
       />
     </pre>
-    <div className="absolute inset-0 bg-background [mask-image:radial-gradient(circle_at_center,transparent_30%,hsl(var(--background))_80%)]"></div>
   </div>
 );
 
