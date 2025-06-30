@@ -17,6 +17,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { portfolioData } from "@/lib/portfolio-data";
 
 type Update = {
   id: number;
@@ -27,14 +28,10 @@ type Update = {
   imageHint?: string;
 };
 
-const initialUpdates: Update[] = [
-  {
-    id: 1,
-    author: "Alex Doe",
-    date: "2 days ago",
-    text: "Just deployed a new version of the project website with improved performance and a refreshed UI. Exciting to see the positive feedback from users already!",
-  },
-];
+const initialUpdates: Update[] = portfolioData.initialUpdates.map((update) => ({
+  ...update,
+  author: portfolioData.name,
+}));
 
 export function UpdatesFeed() {
   const [updates, setUpdates] = useState<Update[]>(initialUpdates);
@@ -45,10 +42,9 @@ export function UpdatesFeed() {
     if (updateText.trim() === "") return;
     const newUpdate: Update = {
       id: Date.now(),
-      author: "Alex Doe",
+      author: portfolioData.name,
       date: "Just now",
       text: updateText,
-      // In a real app, you'd handle image uploads
     };
     setUpdates([newUpdate, ...updates]);
     setUpdateText("");
@@ -63,11 +59,11 @@ export function UpdatesFeed() {
             <CardContent className="p-4 flex items-center gap-4">
               <Avatar>
                 <AvatarImage
-                  src="https://placehold.co/150x150.png"
-                  alt="Alex Doe"
+                  src={portfolioData.avatarUrl}
+                  alt={portfolioData.name}
                   data-ai-hint="professional portrait"
                 />
-                <AvatarFallback>AD</AvatarFallback>
+                <AvatarFallback>{portfolioData.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <span className="flex-grow text-muted-foreground">
                 Start a post

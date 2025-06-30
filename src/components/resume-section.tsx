@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -9,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Briefcase, GraduationCap, Star } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { portfolioData } from "@/lib/portfolio-data";
 
 export function ResumeSection() {
   return (
@@ -19,7 +21,7 @@ export function ResumeSection() {
           <CardDescription>My professional experience and skills.</CardDescription>
         </div>
         <Button variant="ghost" size="lg" asChild className="shrink-0">
-          <a href="/placeholder-resume.pdf" download>
+          <a href={portfolioData.resumeUrl} download>
             <Download className="mr-2 h-5 w-5" />
             <span className="hidden sm:inline">Download</span>
           </a>
@@ -32,28 +34,16 @@ export function ResumeSection() {
             Experience
           </h3>
           <div className="space-y-6 pl-8">
-            <div className="relative border-l border-border pl-6">
-              <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-              <h4 className="font-bold">Senior Software Engineer</h4>
-              <p className="text-sm text-muted-foreground">
-                Tech Corp Inc. | 2020 - Present
-              </p>
-              <p className="mt-1">
-                Leading development of scalable web applications using React,
-                Next.js, and TypeScript.
-              </p>
-            </div>
-            <div className="relative border-l border-border pl-6">
-              <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-              <h4 className="font-bold">Software Engineer</h4>
-              <p className="text-sm text-muted-foreground">
-                Innovate LLC | 2018 - 2020
-              </p>
-              <p className="mt-1">
-                Developed and maintained features for a large-scale e-commerce
-                platform.
-              </p>
-            </div>
+            {portfolioData.experience.map((job, index) => (
+              <div key={index} className="relative border-l border-border pl-6">
+                <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
+                <h4 className="font-bold">{job.title}</h4>
+                <p className="text-sm text-muted-foreground">
+                  {job.company} | {job.date}
+                </p>
+                <p className="mt-1">{job.description}</p>
+              </div>
+            ))}
           </div>
         </div>
         <Separator />
@@ -63,13 +53,15 @@ export function ResumeSection() {
             Education
           </h3>
           <div className="space-y-4 pl-8">
-            <div className="relative border-l border-border pl-6">
-             <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-              <h4 className="font-bold">B.S. in Computer Science</h4>
-              <p className="text-sm text-muted-foreground">
-                University of Technology | 2014 - 2018
-              </p>
-            </div>
+            {portfolioData.education.map((edu, index) => (
+              <div key={index} className="relative border-l border-border pl-6">
+               <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
+                <h4 className="font-bold">{edu.degree}</h4>
+                <p className="text-sm text-muted-foreground">
+                  {edu.institution} | {edu.date}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         <Separator />
@@ -79,15 +71,7 @@ export function ResumeSection() {
             Skills
           </h3>
           <div className="flex flex-wrap gap-2 pl-8">
-            {[
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Node.js",
-              "Tailwind CSS",
-              "Firebase",
-              "GenAI",
-            ].map((skill) => (
+            {portfolioData.skills.map((skill) => (
               <Badge key={skill} variant="secondary">
                 {skill}
               </Badge>
