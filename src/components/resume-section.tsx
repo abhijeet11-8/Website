@@ -33,9 +33,9 @@ export function ResumeSection() {
             <Briefcase className="mr-3 h-5 w-5" />
             Experience
           </h3>
-          <div className="space-y-6 pl-8">
+          <div className="space-y-6 pl-4 md:pl-8">
             {portfolioData.experience.map((job, index) => (
-              <div key={index} className="relative border-l border-border pl-6">
+              <div key={index} className="relative border-l border-border pl-4 md:pl-6">
                 <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
                 <h4 className="font-bold">{job.title}</h4>
                 <p className="text-sm text-muted-foreground">
@@ -52,9 +52,9 @@ export function ResumeSection() {
             <GraduationCap className="mr-3 h-5 w-5" />
             Education
           </h3>
-          <div className="space-y-4 pl-8">
+          <div className="space-y-4 pl-4 md:pl-8">
             {portfolioData.education.map((edu, index) => (
-              <div key={index} className="relative border-l border-border pl-6">
+              <div key={index} className="relative border-l border-border pl-4 md:pl-6">
                <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
                 <h4 className="font-bold">{edu.degree}</h4>
                 <p className="text-sm text-muted-foreground">
@@ -70,7 +70,7 @@ export function ResumeSection() {
             <Star className="mr-3 h-5 w-5" />
             Skills
           </h3>
-          <div className="flex flex-wrap gap-2 pl-8">
+          <div className="flex flex-wrap gap-2 pl-4 md:pl-8">
             {portfolioData.skills.map((skill) => (
               <Badge key={skill} variant="secondary">
                 {skill}

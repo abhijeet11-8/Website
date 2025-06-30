@@ -8,7 +8,7 @@ export default function OtherThanWorkPage() {
       <div className="text-center">
         <h1 className="text-4xl font-bold font-headline text-primary">Other Than Work</h1>
         <p className="mt-2 text-lg text-muted-foreground">
-          A glimpse into my life outside of the office.
+          A glimpse into my life outside of the work.
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
