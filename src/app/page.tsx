@@ -13,6 +13,9 @@ export default function Home() {
           <h1 className="text-4xl font-bold font-headline text-primary">
             About Me
           </h1>
+          <p className="mt-2 text-lg text-muted-foreground">
+            A brief introduction to my work and passion.
+          </p>
         </div>
         <ProfileCard
           name={portfolioData.name}
