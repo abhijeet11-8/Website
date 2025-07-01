@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -31,7 +32,7 @@ export function BlogPostCard({
   slug,
 }: BlogPostCardProps) {
   return (
-    <Card className="flex flex-col overflow-hidden transition-all hover:shadow-lg">
+    <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       {imageUrl && (
         <CardHeader className="p-0">
           <Link href={`/blog/${slug}`} className="block">

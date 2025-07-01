@@ -8,7 +8,10 @@ import { portfolioData } from "@/lib/portfolio-data";
 export default function Home() {
   return (
     <div className="space-y-12">
-      <div className="space-y-6">
+      <div
+        className="space-y-6 animate-fade-in-up"
+        style={{ animationDelay: "0.1s" }}
+      >
         <div className="text-center">
           <h1 className="text-4xl font-bold font-headline text-primary">
             About Me
@@ -24,11 +27,25 @@ export default function Home() {
         />
       </div>
 
-      <UpdatesFeed />
+      <div
+        className="animate-fade-in-up"
+        style={{ animationDelay: "0.2s" }}
+      >
+        <UpdatesFeed />
+      </div>
 
-      <ResumeSection />
+      <div
+        className="animate-fade-in-up"
+        style={{ animationDelay: "0.3s" }}
+      >
+        <ResumeSection />
+      </div>
 
-      <section id="contact" className="text-center py-8">
+      <section
+        id="contact"
+        className="text-center py-8 animate-fade-in-up"
+        style={{ animationDelay: "0.4s" }}
+      >
         <h2 className="text-2xl font-bold font-headline mb-6 text-primary">
           Get In Touch
         </h2>
