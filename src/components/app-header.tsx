@@ -1,56 +1,58 @@
 'use client';
 
 import Link from 'next/link';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
-import { Menu, Home, BookText, Coffee } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { ArrowRight, Menu } from 'lucide-react';
+import { Button } from './ui/button';
 
-const navItems = [
-  { href: '/', label: 'About', icon: Home },
-  { href: '/blog', label: 'Blog', icon: BookText },
-  { href: '/other-than-work', label: 'Other Than Work', icon: Coffee },
-];
+const navConfig: Record<string, { href: string; text: string } | undefined> = {
+  '/': {
+    href: '/blog',
+    text: "don't click here",
+  },
+  '/blog': {
+    href: '/other-than-work',
+    text: 'try again !',
+  },
+  '/other-than-work': {
+    href: '/',
+    text: 'one more time?',
+  },
+};
 
 export function AppHeader() {
   const pathname = usePathname();
+  let config;
+
+  if (pathname === '/') {
+    config = navConfig['/'];
+  } else if (pathname.startsWith('/blog')) {
+    config = navConfig['/blog'];
+  } else if (pathname.startsWith('/other-than-work')) {
+    config = navConfig['/other-than-work'];
+  }
+
+  if (!config) {
+    return null; // Don't render if no config matches
+  }
 
   return (
-    <header className="sticky top-0 z-40 flex h-16 w-full justify-end">
-      <div className="flex items-center gap-4 px-4">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="border-border bg-background/80 backdrop-blur-sm"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Open navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col gap-4 p-4 text-lg">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    'flex items-center gap-3 rounded-md px-3 py-2 transition-colors',
-                    pathname === item.href
-                      ? 'bg-primary text-primary-foreground'
-                      : 'hover:bg-muted'
-                  )}
-                >
-                  <item.icon className="h-5 w-5" />
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </header>
+    <div className="fixed top-4 right-4 z-50 flex items-center gap-4">
+      <p className="hidden animate-pulse font-semibold text-primary md:block">
+        {config.text}
+      </p>
+      <ArrowRight className="hidden h-8 w-8 animate-bounce-horizontal text-primary md:block" />
+      <Button
+        asChild
+        variant="outline"
+        size="icon"
+        className="h-12 w-12 shrink-0"
+      >
+        <Link href={config.href}>
+          <Menu />
+          <span className="sr-only">{config.text}</span>
+        </Link>
+      </Button>
+    </div>
   );
 }
