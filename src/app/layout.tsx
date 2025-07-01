@@ -48,7 +48,7 @@ const ArchitectureDiagram = () => {
 
   const figCaptionStyle = {
     ...textStyle,
-    fontSize: "14px",
+    fontSize: "16px",
   }
 
   const Cuboid = ({ x, y, w, h, d, color, label, label2 }: {x: number, y: number, w: number, h: number, d: number, color: string, label?: string, label2?: string}) => (
@@ -245,7 +245,7 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
             WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
           }}
         />
-        <p className="mt-2 text-sm text-muted-foreground font-sans">Fig 2. Barell Cells</p>
+        <p className="mt-2 text-base text-muted-foreground font-sans">Fig 2. Barell Cells</p>
       </div>
     </div>
   </div>
