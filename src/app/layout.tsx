@@ -228,8 +228,17 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
     </pre>
     <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
       <ArchitectureDiagram />
-      <div className="absolute bottom-8 right-8 w-[300px] h-[300px] opacity-70">
-        <img src="/image.png" alt="Neurobiology Diagram" className="h-full w-full object-contain" />
+      <div className="absolute bottom-12 right-8 w-[300px] text-center">
+        <img
+          src="/image.png"
+          alt="Neurobiology Diagram"
+          className="h-auto w-full object-contain opacity-70"
+          style={{
+            maskImage: 'radial-gradient(circle, black 60%, transparent 90%)',
+            WebkitMaskImage: 'radial-gradient(circle, black 60%, transparent 90%)',
+          }}
+        />
+        <p className="mt-2 text-xs text-muted-foreground">Fig 2. Barell Cells</p>
       </div>
     </div>
   </div>
