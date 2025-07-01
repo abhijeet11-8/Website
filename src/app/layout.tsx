@@ -23,6 +23,96 @@ export const metadata: Metadata = {
   description: "A personal portfolio, blog, and update feed.",
 };
 
+const ArchitectureDiagram = () => {
+  const colors = {
+    blue: 'hsl(160, 60%, 45%)',
+    yellow: 'hsl(43, 74%, 66%)',
+    purple: 'hsl(280, 65%, 60%)',
+    teal: 'hsl(174, 44.1%, 70%)',
+    text: 'hsl(0, 0%, 63.9%)',
+    stroke: 'hsl(0, 0%, 98%)',
+  };
+
+  const commonStyle = {
+    fillOpacity: 0.1,
+    stroke: colors.stroke,
+    strokeWidth: 0.75,
+  };
+  
+  const textStyle = {
+    fill: colors.text,
+    fontSize: '12px',
+    fontFamily: 'var(--font-code)',
+  };
+
+  const Cuboid = ({ x, y, w, h, d, color, label, label2 }: {x: number, y: number, w: number, h: number, d: number, color: string, label?: string, label2?: string}) => (
+    <g>
+      <path d={`M${x},${y} l${d},${-d/2} l${w},0 l${-d},${d/2} Z`} style={{...commonStyle, fill: color}} />
+      <path d={`M${x+w},${y} l${d},${-d/2} l0,${h} l${-d},${d/2} Z`} style={{...commonStyle, fill: color, fillOpacity: 0.2}} />
+      <rect x={x} y={y} width={w} height={h} style={{...commonStyle, fill: color}} />
+      {label && <text x={x + w/2} y={y + h + 15} textAnchor="middle" style={textStyle}>{label}</text>}
+      {label2 && <text x={x + w/2} y={y + h + 30} textAnchor="middle" style={textStyle}>{label2}</text>}
+    </g>
+  );
+
+  const Arrow = ({ d }: {d: string}) => (
+    <path d={d} stroke={colors.teal} strokeWidth="1" fill="none" markerEnd="url(#arrow)" />
+  );
+
+  return (
+    <svg viewBox="0 0 500 750" className="w-full h-full opacity-60">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill={colors.teal} />
+        </marker>
+      </defs>
+
+      {/* Input Image */}
+      <rect x="20" y="240" width="60" height="80" style={{...commonStyle, fill: colors.yellow}} />
+      <text x="50" y="335" textAnchor="middle" style={textStyle}>input</text>
+
+      {/* Main Block Chain */}
+      <Arrow d="M 85 280 L 120 280" />
+      <Cuboid x={125} y={230} w={20} h={100} d={20} color={colors.yellow} label="conv1" />
+      <Arrow d="M 170 280 L 190 280" />
+      <Cuboid x={195} y={240} w={20} h={80} d={18} color={colors.blue} label="BRB1" />
+      <Arrow d="M 240 280 L 260 280" />
+      <Cuboid x={265} y={250} w={20} h={60} d={16} color={colors.blue} label="BRB2" />
+      <Arrow d="M 310 280 L 330 280" />
+      <Cuboid x={335} y={260} w={20} h={40} d={14} color={colors.blue} label="BRB3" />
+      <Arrow d="M 380 280 L 400 280" />
+      <Cuboid x={405} y={265} w={20} h={30} d={12} color={colors.blue} label="BRB4" />
+
+      {/* Skip Connection 1 */}
+      <Arrow d="M 285 250 q -20 -30 -60 -30 l -5 0 q -20 0 -20 20 l 0 20" />
+
+      {/* Bottom Path */}
+      <Arrow d="M 345 305 l 0 70 q 0 10 -10 10 l -40 0" />
+      <Cuboid x={245} y={370} w={40} h={20} d={10} color={colors.blue} label="BRB2 x 3" />
+      <Arrow d="M 240 380 l -20 0" />
+      <Cuboid x={155} y={370} w={60} h={20} d={10} color={colors.blue} label="BRB2 x 1" />
+
+      {/* Predictor Heads */}
+      <Arrow d="M 420 260 C 450 240, 460 180, 440 160" />
+      <Cuboid x={360} y={100} w={50} h={50} d={15} color={colors.yellow} label="predictor1" />
+
+      <Arrow d="M 290 370 l 0 -60 q 0 -20 20 -20 l 40 0 C 400 290, 460 270, 440 250" />
+      <Cuboid x={360} y={190} w={50} h={50} d={15} color={colors.yellow} label="predictor2" />
+
+      <Arrow d="M 150 380 C 100 380, 80 450, 150 480 L 355 490" />
+      <Cuboid x={360} y={430} w={50} h={50} d={15} color={colors.yellow} label="predictor3" />
+      
+      {/* Final Output */}
+      <path d="M 450 125 L 450 455 L 480 425 L 480 95 Z" style={{...commonStyle, fill: colors.purple}} />
+      <Arrow d="M 415 125 L 445 125" />
+      <Arrow d="M 415 215 L 460 295" />
+      <Arrow d="M 415 455 L 455 385" />
+      <text x={465} y={500} textAnchor="middle" style={textStyle}>Detections</text>
+    </svg>
+  );
+};
+
+
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
     <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap sm:right-2/3">
@@ -135,44 +225,9 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
         }}
       />
     </pre>
-    <pre className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
-      <code
-        dangerouslySetInnerHTML={{
-          __html: `<span class="text-accent">[Input]</span>
-  <span class="text-muted-foreground/60">│</span>
-  <span class="text-muted-foreground/60">V</span>
-<span class="text-chart-2">┌──────────────────┐</span>
-<span class="text-chart-2">│ Conv Layer (7x7) │</span>
-<span class="text-chart-2">│ MaxPool (3x3)    │</span>
-<span class="text-chart-2">└──────────────────┘</span>
-  <span class="text-muted-foreground/60">│</span>
-  <span class="text-muted-foreground/60">V</span> <span class="text-muted-foreground/40">// ResBlock x3</span>
-<span class="text-muted-foreground/60">  ┌────────────────┐</span>
-<span class="text-chart-4">┌─┤ Residual Block ├─┐</span>
-<span class="text-chart-4">│ │ (Conv 3x3, 64) │ │</span>
-<span class="text-chart-4">└─┤ (Conv 3x3, 64) ├&lt;──┘</span>
-<span class="text-muted-foreground/60">  └──────(+)───────┘</span>
-           <span class="text-primary">│</span>
-           <span class="text-muted-foreground/60">V</span> <span class="text-muted-foreground/40">// ResBlock x4</span>
-<span class="text-muted-foreground/60">  ┌────────────────┐</span>
-<span class="text-chart-5">┌─┤ Residual Block ├─┐</span>
-<span class="text-chart-5">│ │ (Conv 3x3, 128)│ │</span>
-<span class="text-chart-5">└─┤ (Conv 3x3, 128)├&lt;──┘</span>
-<span class="text-muted-foreground/60">  └──────(+)───────┘</span>
-           <span class="text-primary">│</span>
-           <span class="text-muted-foreground/60">V</span>
-<span class="text-chart-3">┌──────────────────┐</span>
-<span class="text-chart-3">│ AvgPool          │</span>
-<span class="text-chart-3">│ Fully Connected  │</span>
-<span class="text-chart-3">│ Softmax          │</span>
-<span class="text-chart-3">└──────────────────┘</span>
-  <span class="text-muted-foreground/60">│</span>
-  <span class="text-muted-foreground/60">V</span>
-<span class="text-accent">[Output]</span>
-`,
-        }}
-      />
-    </pre>
+    <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
+      <ArchitectureDiagram />
+    </div>
   </div>
 );
 
