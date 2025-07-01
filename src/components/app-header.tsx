@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -45,7 +46,7 @@ export function AppHeader() {
             <span className="sr-only">Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-1/2 sm:max-w-[240px]">
+        <SheetContent side="right" className="w-2/5 sm:max-w-[200px]">
           <nav className="mt-6 grid gap-3">
             {navLinks.map((link) => (
               <Link
@@ -70,7 +71,7 @@ export function AppHeader() {
 
   return (
     <header>
-      <div className="container mx-auto flex h-16 max-w-3xl items-center justify-between p-4 md:p-8">
+      <div className="container mx-auto flex h-16 max-w-2xl items-center justify-between p-4 md:p-8">
         <Link
           href="/"
           className="flex items-center gap-2"
@@ -78,7 +79,7 @@ export function AppHeader() {
         >
           <Code className="h-6 w-6 text-primary" />
           <span className="text-xl font-bold font-headline text-foreground">
-            {portfolioData.name}
+            {portfolioData.name.split(' ')[0]}
           </span>
         </Link>
         {desktopNav}
