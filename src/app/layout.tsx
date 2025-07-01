@@ -60,62 +60,15 @@ const ArchitectureDiagram = () => {
   );
   
   const NeurobiologyDiagram = () => (
-    <g transform="translate(250, 700) scale(1.6) rotate(-15)" opacity="0.6">
-      <defs>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-        <radialGradient id="redCellGradient">
-          <stop offset="0%" stopColor="hsl(0 100% 85% / 0.8)" />
-          <stop offset="50%" stopColor="hsl(350 95% 60% / 0.7)" />
-          <stop offset="100%" stopColor="hsl(340 90% 45% / 0.6)" />
-        </radialGradient>
-      </defs>
-
-      {/* Background Noise */}
-      <g>
-        {/* A lot of tiny dots to create texture */}
-        <circle cx="23" cy="45" r="0.8" fill="hsl(240 80% 70%)" opacity="0.3" /> <circle cx="-78" cy="-23" r="1.1" fill="hsl(240 80% 70%)" opacity="0.2" /> <circle cx="90" cy="12" r="0.9" fill="hsl(240 80% 70%)" opacity="0.4" /> <circle cx="-33" cy="88" r="1.2" fill="hsl(240 80% 70%)" opacity="0.25" /> <circle cx="120" cy="-60" r="0.7" fill="hsl(240 80% 70%)" opacity="0.35" /> <circle cx="5" cy="115" r="1" fill="hsl(240 80% 70%)" opacity="0.3" /> <circle cx="-95" cy="70" r="0.8" fill="hsl(240 80% 70%)" opacity="0.4" /> <circle cx="55" cy="-90" r="1.3" fill="hsl(240 80% 70%)" opacity="0.2" /> <circle cx="130" cy="130" r="0.9" fill="hsl(240 80% 70%)" opacity="0.3" /> <circle cx="-140" cy="-140" r="1" fill="hsl(240 80% 70%)" opacity="0.28" />
-        <circle cx="43" cy="-15" r="1.2" fill="hsl(0 80% 70%)" opacity="0.3" /> <circle cx="-58" cy="53" r="0.9" fill="hsl(0 80% 70%)" opacity="0.2" /> <circle cx="110" cy="-42" r="1.1" fill="hsl(0 80% 70%)" opacity="0.4" /> <circle cx="-13" cy="108" r="1" fill="hsl(0 80% 70%)" opacity="0.25" /> <circle cx="100" cy="-80" r="1.3" fill="hsl(0 80% 70%)" opacity="0.35" /> <circle cx="-25" cy="-115" r="0.8" fill="hsl(0 80% 70%)" opacity="0.3" /> <circle cx="-115" cy="90" r="1.2" fill="hsl(0 80% 70%)" opacity="0.4" /> <circle cx="75" cy="-110" r="0.9" fill="hsl(0 80% 70%)" opacity="0.2" /> <circle cx="150" cy="100" r="1.1" fill="hsl(0 80% 70%)" opacity="0.3" /> <circle cx="-120" cy="-100" r="1.3" fill="hsl(0 80% 70%)" opacity="0.28" />
-      </g>
-      
-      {/* Main Cell Structures */}
-      <g filter="url(#glow)">
-        <g transform="translate(-80, -60)">
-          <ellipse cx="0" cy="0" rx="25" ry="22" fill="url(#redCellGradient)" />
-          <path d="M-20 8 C -35 0, -30 -18, -10 -20 C 12 -25, 25 -12, 25 5 C 20 22, 0 25, -20 8 Z" stroke="hsl(230 80% 60% / 0.3)" strokeWidth="2" fill="none" />
-        </g>
-        <g transform="translate(-30, -80)">
-          <ellipse cx="0" cy="0" rx="26" ry="23" fill="url(#redCellGradient)" />
-        </g>
-        <g transform="translate(20, -55)">
-          <ellipse cx="0" cy="0" rx="28" ry="24" fill="url(#redCellGradient)" />
-        </g>
-        <g transform="translate(-50, -10)">
-          <ellipse cx="0" cy="0" rx="30" ry="25" fill="url(#redCellGradient)" />
-        </g>
-        <g transform="translate(0, 0)">
-          <ellipse cx="0" cy="0" rx="32" ry="28" fill="url(#redCellGradient)" />
-        </g>
-        <g transform="translate(50, -20)">
-          <ellipse cx="0" cy="0" rx="29" ry="26" fill="url(#redCellGradient)" />
-          <path d="M-24 10 C -38 0, -34 -20, -9 -24 C 16 -28, 28 -15, 28 6 C 24 26, -1 28, -24 10 Z" stroke="hsl(230 80% 60% / 0.4)" strokeWidth="2.5" fill="none" />
-        </g>
-        <g transform="translate(10, 45)">
-          <ellipse cx="0" cy="0" rx="33" ry="27" fill="url(#redCellGradient)" />
-        </g>
-        <g transform="translate(65, 30)">
-          <ellipse cx="0" cy="0" rx="31" ry="28" fill="url(#redCellGradient)" />
-        </g>
-         <g transform="translate(110, 10)">
-          <ellipse cx="0" cy="0" rx="26" ry="24" fill="url(#redCellGradient)" />
-           <path d="M-22 8 C -36 -2, -31 -22, -7 -26 C 18 -30, 27 -17, 27 3 C 22 23, -3 25, -22 8 Z" stroke="hsl(230 80% 60% / 0.5)" strokeWidth="3" fill="none" />
-        </g>
-      </g>
+    <g transform="translate(250, 700) scale(1.8) rotate(-15)" opacity="0.65">
+      <image 
+        href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCAHSA8gDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1VXV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIqUpKblJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigA-..." 
+        width="300" 
+        height="300"
+        x="-150"
+        y="-150"
+        preserveAspectRatio="xMidYMid slice"
+      />
     </g>
   );
 
@@ -171,7 +124,7 @@ const ArchitectureDiagram = () => {
         <Arrow d="M 415 455 L 455 385" />
       </g>
       <NeurobiologyDiagram />
-      <text x={250} y={850} textAnchor="middle" style={{...textStyle, fontSize: '14px'}}>Drosophila optic lobe</text>
+      <text x={250} y={850} textAnchor="middle" style={{...textStyle, fontSize: '14px'}}>fig 2. Barell cells</text>
     </svg>
   );
 };
