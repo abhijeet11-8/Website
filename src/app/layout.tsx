@@ -61,7 +61,7 @@ const ArchitectureDiagram = () => {
   );
 
   return (
-    <svg viewBox="0 0 500 950" className="mx-auto w-full max-w-sm opacity-60">
+    <svg viewBox="0 0 500 950" className="ml-auto w-full max-w-sm opacity-60">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" fill={colors.teal} />
@@ -117,7 +117,7 @@ const ArchitectureDiagram = () => {
 
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap sm:right-2/3">
+    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap sm:right-[55%]">
       <code
         dangerouslySetInnerHTML={{
           __html: `<span class="text-chart-5">import</span> numpy <span class="text-chart-5">as</span> np
@@ -227,9 +227,9 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
         }}
       />
     </pre>
-    <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
+    <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-[55%]">
       <ArchitectureDiagram />
-      <div className="absolute bottom-12 right-8 w-full max-w-[350px] text-center">
+      <div className="absolute bottom-12 right-0 w-full max-w-[350px] text-center">
         <img
           src="/image.png"
           alt="Neurobiology Diagram"
