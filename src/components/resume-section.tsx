@@ -17,7 +17,7 @@ export function ResumeSection() {
     <Card>
       <CardHeader className="flex-row items-center justify-between">
         <div>
-          <CardTitle className="text-2xl font-headline text-primary">Resume</CardTitle>
+          <CardTitle className="text-2xl font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">Resume</CardTitle>
           <CardDescription>My professional experience and skills.</CardDescription>
         </div>
         <Button variant="ghost" size="lg" asChild className="shrink-0">

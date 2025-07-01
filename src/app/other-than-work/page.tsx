@@ -6,7 +6,7 @@ export default function OtherThanWorkPage() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl font-bold font-headline text-primary">
+        <h1 className="text-4xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
           Other Than Work
         </h1>
         <p className="mt-2 text-lg text-muted-foreground">

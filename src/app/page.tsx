@@ -10,7 +10,7 @@ export default function Home() {
     <div className="space-y-12">
       <div className="space-y-6">
         <div className="text-center">
-          <h1 className="text-4xl font-bold font-headline text-primary">
+          <h1 className="text-4xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
             About Me
           </h1>
           <p className="mt-2 text-lg text-muted-foreground">
@@ -33,7 +33,7 @@ export default function Home() {
       </div>
 
       <section id="contact" className="text-center py-8">
-        <h2 className="text-2xl font-bold font-headline mb-6 text-primary">
+        <h2 className="text-2xl font-bold font-headline mb-6 bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
           Get In Touch
         </h2>
         <ContactLinks />

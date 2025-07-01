@@ -15,7 +15,7 @@ export function UpdatesFeed() {
   return (
     <div className="space-y-8">
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold font-headline text-primary">Recent Updates</h2>
+        <h2 className="text-2xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">Recent Updates</h2>
         {initialUpdates.map((update) => (
           <Card key={update.id}>
             <CardContent className="p-6 space-y-4">

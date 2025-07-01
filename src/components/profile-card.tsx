@@ -21,7 +21,7 @@ export function ProfileCard({ name, bio, avatarUrl }: ProfileCardProps) {
             <AvatarFallback>{name.charAt(0)}</AvatarFallback>
           </Avatar>
           <div className="space-y-1.5">
-            <h2 className="text-2xl font-bold font-headline text-primary md:text-3xl">{name}</h2>
+            <h2 className="text-2xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent md:text-3xl">{name}</h2>
             <p className="text-base text-muted-foreground md:text-lg">{bio}</p>
           </div>
         </div>

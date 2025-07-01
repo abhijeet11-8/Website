@@ -37,7 +37,7 @@ export default function OtherThanWorkPostPage({
             </Badge>
           ))}
         </div>
-        <h1 className="text-4xl font-bold font-headline text-primary">
+        <h1 className="text-4xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
           {post.title}
         </h1>
         <p className="text-sm text-muted-foreground">{post.date}</p>
