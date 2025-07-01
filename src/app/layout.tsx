@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const NeurobiologyDiagram = () => (
-    <g transform="translate(250, 700) rotate(-15)" opacity="0.65">
+    <g transform="translate(250, 700)" opacity="0.8">
       <image 
         href="/image.png" 
         width="300" 
