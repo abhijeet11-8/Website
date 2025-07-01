@@ -19,7 +19,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Gitfolio by Alex Doe",
+  title: "Abhijeet",
   description: "A personal portfolio, blog, and update feed.",
 };
 

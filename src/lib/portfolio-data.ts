@@ -25,7 +25,7 @@ export const portfolioData = {
    * - The current avatar is a generated SVG. You can replace the data URI
    *   with a URL to your own image, e.g., "https://placehold.co/150x150.png"
    */
-  name: "Alex Doe",
+  name: "Abhijeet",
   bio: "Senior Software Engineer specializing in Next.js, AI, and creating beautiful user experiences.",
   avatarUrl: "https://placehold.co/150x150.png",
 
