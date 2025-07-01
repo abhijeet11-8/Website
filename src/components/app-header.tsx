@@ -1,58 +1,83 @@
+
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight, Menu } from 'lucide-react';
+import { Code, Menu } from 'lucide-react';
 import { Button } from './ui/button';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { cn } from '@/lib/utils';
+import { portfolioData } from '@/lib/portfolio-data';
 
-const navConfig: Record<string, { href: string; text: string } | undefined> = {
-  '/': {
-    href: '/blog',
-    text: "don't click here",
-  },
-  '/blog': {
-    href: '/other-than-work',
-    text: 'try again !',
-  },
-  '/other-than-work': {
-    href: '/',
-    text: 'one more time?',
-  },
-};
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/other-than-work', label: 'Other Than Work' },
+];
 
 export function AppHeader() {
   const pathname = usePathname();
-  let config;
 
-  if (pathname === '/') {
-    config = navConfig['/'];
-  } else if (pathname.startsWith('/blog')) {
-    config = navConfig['/blog'];
-  } else if (pathname.startsWith('/other-than-work')) {
-    config = navConfig['/other-than-work'];
-  }
+  const desktopNav = (
+    <nav className="hidden items-center gap-6 md:flex">
+      {navLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={cn(
+            'text-sm font-medium transition-colors hover:text-primary',
+            pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+          )}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </nav>
+  );
 
-  if (!config) {
-    return null; // Don't render if no config matches
-  }
+  const mobileNav = (
+    <div className="md:hidden">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon">
+            <Menu />
+            <span className="sr-only">Toggle Menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right">
+          <nav className="mt-8 grid gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'text-lg font-semibold transition-colors hover:text-primary',
+                  pathname === link.href
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex items-center gap-4">
-      <p className="hidden animate-pulse font-semibold text-primary md:block">
-        {config.text}
-      </p>
-      <ArrowRight className="hidden h-8 w-8 animate-bounce-horizontal text-primary md:block" />
-      <Button
-        asChild
-        variant="outline"
-        size="icon"
-        className="h-12 w-12 shrink-0"
-      >
-        <Link href={config.href}>
-          <Menu />
-          <span className="sr-only">{config.text}</span>
+    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-sm">
+      <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between p-4 md:p-8">
+        <Link href="/" className="flex items-center gap-2">
+          <Code className="h-6 w-6 text-primary" />
+          <span className="text-lg font-bold font-headline">
+            {portfolioData.name}
+          </span>
         </Link>
-      </Button>
-    </div>
+        {desktopNav}
+        {mobileNav}
+      </div>
+    </header>
   );
 }
