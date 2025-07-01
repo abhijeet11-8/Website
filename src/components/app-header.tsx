@@ -1,6 +1,7 @@
 
 'use client';
 
+import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Code, Menu } from 'lucide-react';
@@ -17,6 +18,7 @@ const navLinks = [
 
 export function AppHeader() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const desktopNav = (
     <nav className="hidden items-center gap-6 md:flex">
@@ -37,14 +39,14 @@ export function AppHeader() {
 
   const mobileNav = (
     <div className="md:hidden">
-      <Sheet>
+      <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon">
             <Menu />
             <span className="sr-only">Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="right">
+        <SheetContent side="right" className="w-2/3 sm:max-w-xs">
           <nav className="mt-8 grid gap-4">
             {navLinks.map((link) => (
               <Link
@@ -56,6 +58,7 @@ export function AppHeader() {
                     ? 'text-primary'
                     : 'text-muted-foreground'
                 )}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
@@ -69,7 +72,11 @@ export function AppHeader() {
   return (
     <header>
       <div className="container mx-auto flex h-16 max-w-3xl items-center justify-between p-4 md:p-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
           <Code className="h-6 w-6 text-primary" />
           <span className="text-xl font-bold font-headline text-foreground">
             {portfolioData.name}
@@ -81,4 +88,3 @@ export function AppHeader() {
     </header>
   );
 }
-    
