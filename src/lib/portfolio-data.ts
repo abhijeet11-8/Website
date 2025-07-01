@@ -1,4 +1,3 @@
-
 /**
  * =====================================================================================
  *                                  PORTFOLIO DATA
@@ -26,7 +25,7 @@ export const portfolioData = {
    *   with a URL to your own image, e.g., "https://placehold.co/150x150.png"
    */
   name: "Abhijeet Vikram",
-  bio: "Undergrad Data Science @ IISER Pune with interests in Deep Learning, Physics Inspired NNs,  and Quantum AI (Hopfield Network). ",
+  bio: 'Undergrad Data Science @ IISER Pune with interests in Deep Learning, Physics Inspired NNs and AI for Quantum.',
   avatarUrl: "https://placehold.co/150x150.png",
 
   /**
