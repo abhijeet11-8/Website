@@ -1,12 +1,3 @@
 
 'use client';
-
-import { SidebarTrigger } from '@/components/ui/sidebar';
-
-export function AppHeader() {
-  return (
-    <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:hidden">
-      <SidebarTrigger />
-    </header>
-  );
-}
+// This file is intentionally left blank as part of an undo operation.

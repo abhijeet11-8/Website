@@ -32,7 +32,7 @@ export function BlogPostCard({
   slug,
 }: BlogPostCardProps) {
   return (
-    <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <Card className="flex flex-col overflow-hidden">
       {imageUrl && (
         <CardHeader className="p-0">
           <Link href={`/blog/${slug}`} className="block">

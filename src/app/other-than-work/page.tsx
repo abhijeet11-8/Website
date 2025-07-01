@@ -5,10 +5,7 @@ import { otherThanWorkPosts } from "@/lib/other-than-work-data";
 export default function OtherThanWorkPage() {
   return (
     <div className="space-y-12">
-      <div
-        className="text-center animate-fade-in-up"
-        style={{ animationDelay: "0.1s" }}
-      >
+      <div className="text-center">
         <h1 className="text-4xl font-bold font-headline text-primary">
           Other Than Work
         </h1>
@@ -17,14 +14,8 @@ export default function OtherThanWorkPage() {
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
-        {otherThanWorkPosts.map((post, index) => (
-          <div
-            key={post.slug}
-            className="animate-fade-in-up"
-            style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-          >
-            <BlogPostCard {...post} />
-          </div>
+        {otherThanWorkPosts.map((post) => (
+          <BlogPostCard key={post.slug} {...post} />
         ))}
       </div>
     </div>

@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { Roboto, Lora } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { PageWrapper } from "@/components/page-wrapper";
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -147,13 +145,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${roboto.variable} ${lora.variable}`}>
       <body className="font-sans antialiased relative">
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset>
-            <CodeBackground />
-            <PageWrapper>{children}</PageWrapper>
-          </SidebarInset>
-        </SidebarProvider>
+        <CodeBackground />
+        <PageWrapper>{children}</PageWrapper>
         <Toaster />
       </body>
     </html>
