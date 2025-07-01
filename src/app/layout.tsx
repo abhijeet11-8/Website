@@ -60,7 +60,7 @@ const ArchitectureDiagram = () => {
   );
 
   return (
-    <svg viewBox="0 0 500 950" className="w-full h-full opacity-60">
+    <svg viewBox="0 0 500 950" className="w-full opacity-60">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" fill={colors.teal} />
@@ -228,14 +228,14 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
     </pre>
     <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
       <ArchitectureDiagram />
-      <div className="absolute bottom-12 right-8 w-[300px] text-center">
+      <div className="absolute bottom-12 right-8 w-[350px] text-center">
         <img
           src="/image.png"
           alt="Neurobiology Diagram"
           className="h-auto w-full object-contain opacity-70"
           style={{
-            maskImage: 'radial-gradient(circle, black 60%, transparent 90%)',
-            WebkitMaskImage: 'radial-gradient(circle, black 60%, transparent 90%)',
+            maskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
           }}
         />
         <p className="mt-2 text-xs text-muted-foreground">Fig 2. Barell Cells</p>
