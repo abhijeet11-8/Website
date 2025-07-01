@@ -25,8 +25,8 @@ export const portfolioData = {
    * - The current avatar is a generated SVG. You can replace the data URI
    *   with a URL to your own image, e.g., "https://placehold.co/150x150.png"
    */
-  name: "Abhijeet",
-  bio: "Senior Software Engineer specializing in Next.js, AI, and creating beautiful user experiences.",
+  name: "Abhijeet Vikram",
+  bio: "Undergrad Data Science @ IISER Pune with interests in Deep Learning, Physics Inspired NNs,  and Quantum AI (Hopfield Network). ",
   avatarUrl: "https://placehold.co/150x150.png",
 
   /**
@@ -37,9 +37,9 @@ export const portfolioData = {
    */
   resumeUrl: "/placeholder-resume.pdf",
   contact: {
-    email: "your-email@example.com",
-    github: "https://github.com/your-username",
-    linkedin: "https://linkedin.com/in/your-username",
+    email: "abhijeet.vikram@students.iiserpune.ac.in",
+    github: "https://github.com/abhijeet11-8",
+    linkedin: "https://www.linkedin.com/in/abhijeet-vikram-2b9739328/",
   },
 
   /**
@@ -49,18 +49,32 @@ export const portfolioData = {
    */
   experience: [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Corp Inc.",
-      date: "2020 - Present",
+      title: "Summer Project",
+      company: "Indian Institute of Technology, Guwahati (IITG)",
+      date: "May 2025 - Present",
       description:
-        "Leading development of scalable web applications using React, Next.js, and TypeScript.",
+        "Working with Spiking Neural Networks",
     },
     {
-      title: "Software Engineer",
-      company: "Innovate LLC",
-      date: "2018 - 2020",
+      title: "Winter Project",
+      company: "Indian Institute of Technology, Guwahati (IITG)",
+      date: "Dec 2024 - Jan 2024",
       description:
-        "Developed and maintained features for a large-scale e-commerce platform.",
+        "Studied Spiking Neural Networks with LIF neuron and Heterogeneity by making Initial Membrane Potential Learnable",
+    },
+    {
+      title: "Summer Internship - PBL",
+      company: "Indian Institute of Science Education and Research (IISER), Pune",
+      date: "jun 2024 - Aug 2024",
+      description:
+        "Standardized the Spatial Kernel with Drosophila Activity Monitor (DAM), it's Data Cleaning and Analysis using Curve Fitting..",
+    },
+    {
+      title: "Winter Project - PBL (Population Biology Lab)",
+      company: "Indian Institute of Science Education and Research (IISER), Pune",
+      date: "Dec 2023 - Apr 2024",
+      description:
+        "Worked on developing Fly Feeding Rate Calculation assay with solid food for outbred flies. It was a winter plus unofficial semester project at Population Biology Lab",
     },
   ],
 
@@ -70,9 +84,14 @@ export const portfolioData = {
    */
   education: [
     {
-      degree: "B.S. in Computer Science",
-      institution: "University of Technology",
-      date: "2014 - 2018",
+      degree: "BS-MS",
+      institution: "Indian Institute of Science Education and Research, Pune (IISER Pune)",
+      date: "2022 - 2027 (Present)",
+    },
+    {
+      degree: "High School",
+      institution: "The Aryan International School, Varanasi",
+      date: "2020",
     },
   ],
 
@@ -81,13 +100,12 @@ export const portfolioData = {
    * - A list of your professional skills.
    */
   skills: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "Tailwind CSS",
-    "Firebase",
+    "Python",
+    "ML",
+    "Deep Learning",
+    "PINNs",
     "GenAI",
+    "JAX"
   ],
 
   /**
@@ -97,8 +115,12 @@ export const portfolioData = {
   initialUpdates: [
     {
       id: 1,
-      date: "2 days ago",
-      text: "Just deployed a new version of the project website with improved performance and a refreshed UI. Exciting to see the positive feedback from users already!",
+      date: "27-05-25",
+      text: `Currently working on low-power AI systems inspired from Biological Neuronal models, with spiking neural networks using Selective State Space Models and Harmonic Resonate and Fire (HRF/BHRF) Neuron for sequential data.
+
+Also, working on applying deep learning methods to financial modeling, option pricing, and trading strategy optimization.
+
+Experienced with CNNs, ResNet, RNNs, LSTMs, State Space Models. Currently studing PINNs and GenAI. Interested in further studying Reinforcement Learning, NLP, Information Theory and Mathematical Finance.`,
     },
   ],
 };
