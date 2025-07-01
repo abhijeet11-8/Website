@@ -245,7 +245,7 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
             WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
           }}
         />
-        <p className="mt-2 text-base text-muted-foreground font-sans">Fig 2. Barell Cells</p>
+        <p className="mt-2 text-xs text-muted-foreground font-sans">Fig 2. Barell Cells</p>
       </div>
     </div>
   </div>
