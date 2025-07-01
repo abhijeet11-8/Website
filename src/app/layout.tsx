@@ -46,6 +46,11 @@ const ArchitectureDiagram = () => {
     fontFamily: 'var(--font-sans)',
   };
 
+  const figCaptionStyle = {
+    ...textStyle,
+    fontSize: "14px",
+  }
+
   const Cuboid = ({ x, y, w, h, d, color, label, label2 }: {x: number, y: number, w: number, h: number, d: number, color: string, label?: string, label2?: string}) => (
     <g>
       <path d={`M${x},${y} l${d},${-d/2} l${w},0 l${-d},${d/2} Z`} style={{...commonStyle, fill: color}} />
@@ -109,7 +114,7 @@ const ArchitectureDiagram = () => {
         <Arrow d="M 415 125 L 445 125" />
         <Arrow d="M 415 215 L 460 295" />
         <Arrow d="M 415 455 L 455 385" />
-        <text x={250} y={520} textAnchor="middle" style={textStyle}>Fig 1. MobileNet Model</text>
+        <text x={250} y={520} textAnchor="middle" style={figCaptionStyle}>Fig 1. MobileNet Model</text>
       </g>
     </svg>
   );
