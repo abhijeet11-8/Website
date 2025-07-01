@@ -67,7 +67,7 @@ export function AppHeader() {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-sm">
+    <header>
       <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between p-4 md:p-8">
         <Link href="/" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
@@ -81,3 +81,5 @@ export function AppHeader() {
     </header>
   );
 }
+
+    

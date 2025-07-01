@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-foreground/25 whitespace-pre-wrap sm:right-2/3">
+    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-foreground/40 whitespace-pre-wrap sm:right-2/3">
       <code
         dangerouslySetInnerHTML={{
           __html: `<span class="code-bg-token-keyword">import</span> numpy <span class="code-bg-token-keyword">as</span> np
@@ -154,3 +154,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    
