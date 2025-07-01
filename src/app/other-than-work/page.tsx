@@ -9,7 +9,7 @@ export default function OtherThanWorkPage() {
         <h1 className="text-4xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
           Other Than Work
         </h1>
-        <p className="mt-2 text-lg text-muted-foreground">
+        <p className="mt-2 text-lg text-foreground">
           A glimpse into my life outside of the work.
         </p>
       </div>

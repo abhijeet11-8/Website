@@ -9,7 +9,7 @@ export default function BlogPage() {
         <h1 className="text-4xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
           My Blog
         </h1>
-        <p className="mt-2 text-lg text-muted-foreground">
+        <p className="mt-2 text-lg text-foreground">
           Writing about things I'm learning and building.
         </p>
       </div>

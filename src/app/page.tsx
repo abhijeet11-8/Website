@@ -13,7 +13,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
             About Me
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">
+          <p className="mt-2 text-lg text-foreground">
             A brief summary of my work.
           </p>
         </div>
