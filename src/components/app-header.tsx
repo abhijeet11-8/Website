@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -67,7 +68,7 @@ export function AppHeader() {
 
   return (
     <header>
-      <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between p-4 md:p-8">
+      <div className="container mx-auto flex h-16 max-w-3xl items-center justify-between p-4 md:p-8">
         <Link href="/" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
           <span className="text-xl font-bold font-headline text-foreground">
