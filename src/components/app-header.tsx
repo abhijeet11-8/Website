@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -71,7 +70,7 @@ export function AppHeader() {
       <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between p-4 md:p-8">
         <Link href="/" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
-          <span className="text-lg font-bold font-headline">
+          <span className="text-xl font-bold font-headline text-foreground">
             {portfolioData.name}
           </span>
         </Link>
@@ -81,5 +80,4 @@ export function AppHeader() {
     </header>
   );
 }
-
     
