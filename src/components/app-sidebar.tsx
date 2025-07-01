@@ -35,27 +35,30 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
-        <Link href="/" className="group flex items-center gap-2 p-2">
-          <Code2 className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
-          <span className="text-lg font-bold group-data-[collapsible=icon]:hidden">
-            {portfolioData.name}
-          </span>
+        <Link href="/" legacyBehavior>
+          <a className="group flex items-center gap-2 p-2">
+            <Code2 className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
+            <span className="text-lg font-bold group-data-[collapsible=icon]:hidden">
+              {portfolioData.name}
+            </span>
+          </a>
         </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
           {navItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <SidebarMenuButton
-                asChild
-                isActive={pathname === item.href}
-                tooltip={item.label}
-              >
-                <Link href={item.href}>
+              <Link href={item.href} legacyBehavior>
+                <SidebarMenuButton
+                  as="a"
+                  href={item.href}
+                  isActive={pathname === item.href}
+                  tooltip={item.label}
+                >
                   <item.icon />
                   <span>{item.label}</span>
-                </Link>
-              </SidebarMenuButton>
+                </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
