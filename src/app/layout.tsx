@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-foreground/15 whitespace-pre-wrap sm:right-2/3">
+    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-foreground/25 whitespace-pre-wrap sm:right-2/3">
       <code
         dangerouslySetInnerHTML={{
           __html: `<span class="code-bg-token-keyword">import</span> numpy <span class="code-bg-token-keyword">as</span> np
@@ -105,7 +105,7 @@ model<span class="code-bg-token-punctuation">.</span><span class="code-bg-token-
     <span class="code-bg-token-keyword">for</span> images<span class="code-bg-token-punctuation">,</span> labels <span class="code-bg-token-keyword">in</span> test_loader<span class="code-bg-token-punctuation">:</span>
         images <span class="code-bg-token-operator">=</span> images<span class="code-bg-token-punctuation">.</span><span class="code-bg-token-function">reshape</span><span class="code-bg-token-punctuation">(</span><span class="code-bg-token-operator">-</span><span class="code-bg-token-number">1</span><span class="code-bg-token-punctuation">,</span> input_dim<span class="code-bg-token-punctuation">)</span><span class="code-bg-token-punctuation">.</span><span class="code-bg-token-function">to</span><span class="code-bg-token-punctuation">(</span>device<span class="code-bg-token-punctuation">)</span>
         labels <span class="code-bg-token-operator">=</span> labels<span class="code-bg-token-punctuation">.</span><span class="code-bg-token-function">to</span><span class="code-bg-token-punctuation">(</span>device<span class="code-bg-token-punctuation">)</span>
-        outputs <span class="code-bg-token-operator">=</span> model<span class="code-bg-token-punctuation">(</span>images<span class="code-bg-token-punctuation">)</span>
+        outputs <span class="code-bg-token-operator">=</span> model<span class="code-bg-token- punctuation">(</span>images<span class="code-bg-token-punctuation">)</span>
         _<span class="code-bg-token-punctuation">,</span> predicted <span class="code-bg-token-operator">=</span> torch<span class="code-bg-token-punctuation">.</span>max<span class="code-bg-token-punctuation">(</span>outputs<span class="code-bg-token-punctuation">.</span>data<span class="code-bg-token-punctuation">,</span> <span class="code-bg-token-number">1</span><span class="code-bg-token-punctuation">)</span>
         total <span class="code-bg-token-operator">+=</span> labels<span class="code-bg-token-punctuation">.</span><span class="code-bg-token-function">size</span><span class="code-bg-token-punctuation">(</span><span class="code-bg-token-number">0</span><span class="code-bg-token-punctuation">)</span>
         correct <span class="code-bg-token-operator">+=</span> <span class="code-bg-token-punctuation">(</span>predicted <span class="code-bg-token-operator">==</span> labels<span class="code-bg-token-punctuation">)</span><span class="code-bg-token-punctuation">.</span><span class="code-bg-token-function">sum</span><span class="code-bg-token-punctuation">(</span><span class="code-bg-token-punctuation">)</span><span class="code-bg-token-punctuation">.</span><span class="code-bg-token-function">item</span><span class="code-bg-token-punctuation">(</span><span class="code-bg-token-punctuation">)</span>
