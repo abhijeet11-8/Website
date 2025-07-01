@@ -135,6 +135,44 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
         }}
       />
     </pre>
+    <pre className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
+      <code
+        dangerouslySetInnerHTML={{
+          __html: `<span class="text-accent">[Input]</span>
+  <span class="text-muted-foreground/60">│</span>
+  <span class="text-muted-foreground/60">V</span>
+<span class="text-chart-2">┌──────────────────┐</span>
+<span class="text-chart-2">│ Conv Layer (7x7) │</span>
+<span class="text-chart-2">│ MaxPool (3x3)    │</span>
+<span class="text-chart-2">└──────────────────┘</span>
+  <span class="text-muted-foreground/60">│</span>
+  <span class="text-muted-foreground/60">V</span> <span class="text-muted-foreground/40">// ResBlock x3</span>
+<span class="text-muted-foreground/60">  ┌────────────────┐</span>
+<span class="text-chart-4">┌─┤ Residual Block ├─┐</span>
+<span class="text-chart-4">│ │ (Conv 3x3, 64) │ │</span>
+<span class="text-chart-4">└─┤ (Conv 3x3, 64) ├&lt;──┘</span>
+<span class="text-muted-foreground/60">  └──────(+)───────┘</span>
+           <span class="text-primary">│</span>
+           <span class="text-muted-foreground/60">V</span> <span class="text-muted-foreground/40">// ResBlock x4</span>
+<span class="text-muted-foreground/60">  ┌────────────────┐</span>
+<span class="text-chart-5">┌─┤ Residual Block ├─┐</span>
+<span class="text-chart-5">│ │ (Conv 3x3, 128)│ │</span>
+<span class="text-chart-5">└─┤ (Conv 3x3, 128)├&lt;──┘</span>
+<span class="text-muted-foreground/60">  └──────(+)───────┘</span>
+           <span class="text-primary">│</span>
+           <span class="text-muted-foreground/60">V</span>
+<span class="text-chart-3">┌──────────────────┐</span>
+<span class="text-chart-3">│ AvgPool          │</span>
+<span class="text-chart-3">│ Fully Connected  │</span>
+<span class="text-chart-3">│ Softmax          │</span>
+<span class="text-chart-3">└──────────────────┘</span>
+  <span class="text-muted-foreground/60">│</span>
+  <span class="text-muted-foreground/60">V</span>
+<span class="text-accent">[Output]</span>
+`,
+        }}
+      />
+    </pre>
   </div>
 );
 
