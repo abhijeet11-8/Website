@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Roboto, Lora } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { PageWrapper } from "@/components/page-wrapper";
@@ -236,9 +237,12 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
     <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-[55%] opacity-70">
       <ArchitectureDiagram />
       <div className="absolute bottom-12 right-0 w-full max-w-[350px] text-center">
-        <img
-          src="/nextn/image.png"
+        <Image
+          src="/image.png"
           alt="Neurobiology Diagram"
+          data-ai-hint="neurobiology diagram"
+          width={350}
+          height={200}
           className="h-auto w-full object-contain"
           style={{
             maskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
