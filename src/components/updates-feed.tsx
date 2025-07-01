@@ -21,7 +21,7 @@ export function UpdatesFeed() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-2xl font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
+        <CardTitle className="text-2xl font-headline bg-gradient-to-r from-chart-2 to-chart-4 bg-clip-text text-transparent">
           Recent Updates
         </CardTitle>
       </CardHeader>
