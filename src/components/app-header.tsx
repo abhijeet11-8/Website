@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -46,14 +45,14 @@ export function AppHeader() {
             <span className="sr-only">Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-2/3 sm:max-w-xs">
-          <nav className="mt-8 grid gap-4">
+        <SheetContent side="right" className="w-1/2 sm:max-w-[240px]">
+          <nav className="mt-6 grid gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'text-lg font-semibold transition-colors hover:text-primary',
+                  'text-base font-semibold transition-colors hover:text-primary',
                   pathname === link.href
                     ? 'text-primary'
                     : 'text-muted-foreground'
