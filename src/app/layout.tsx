@@ -238,7 +238,7 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
       <ArchitectureDiagram />
       <div className="absolute bottom-12 right-0 w-full max-w-[350px] text-center">
         <Image
-          src="/image.png"
+          src="/website/image.png"
           alt="Neurobiology Diagram"
           data-ai-hint="neurobiology diagram"
           width={350}
