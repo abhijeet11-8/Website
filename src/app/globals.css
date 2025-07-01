@@ -86,21 +86,21 @@
     color: hsl(var(--muted-foreground) / 0.1);
   }
   .code-bg-token-keyword {
-    color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary) / 0.3);
   }
   .code-bg-token-function {
-    color: hsl(var(--accent) / 0.1);
+    color: hsl(var(--accent) / 0.3);
   }
   .code-bg-token-string {
     color: hsl(var(--foreground) / 0.1);
   }
   .code-bg-token-operator {
-    color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary) / 0.3);
   }
   .code-bg-token-punctuation {
     color: hsl(var(--foreground) / 0.1);
   }
   .code-bg-token-number {
-    color: hsl(var(--accent) / 0.1);
+    color: hsl(var(--accent) / 0.3);
   }
 }
