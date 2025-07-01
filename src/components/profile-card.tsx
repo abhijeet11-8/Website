@@ -10,7 +10,7 @@ type ProfileCardProps = {
 
 export function ProfileCard({ name, bio, avatarUrl }: ProfileCardProps) {
   return (
-    <Card className="border-none bg-transparent shadow-none md:border md:bg-card md:shadow-sm">
+    <Card>
       <CardContent className="p-6">
         <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
           <Avatar className="h-24 w-24 md:h-28 md:w-28">
