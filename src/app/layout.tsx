@@ -59,56 +59,66 @@ const ArchitectureDiagram = () => {
     <path d={d} stroke={colors.teal} strokeWidth="1" fill="none" markerEnd="url(#arrow)" />
   );
   
-  const BrainStemDiagram = () => (
-    <g transform="translate(250, 650) scale(1.5)">
-      {/* Main Thalamus/Diencephalon (purple) */}
-      <path
-        d="M 0, -80 C -50, -120, -80, -80, -40, -50 C -20, -30, 20, -30, 40, -50 C 80, -80, 50, -120, 0, -80 Z"
-        style={{...commonStyle, fill: colors.purple, strokeWidth: 1}}
-      />
-      
-      {/* Midbrain and Pons (teal/green) */}
-      <path 
-        d="M -40,-50 C -60,0, -40,50, -20,80 L 20,80 C 40,50, 60,0, 40,-50 L -40,-50 Z"
-        style={{...commonStyle, fill: colors.blue}}
-      />
-      {/* Pons highlight */}
-      <path 
-        d="M -50,40 C -80,40, -80,0, -50,-10 Q 0,-30, 50,-10 C 80,0, 80,40, 50,40 Z"
-        style={{...commonStyle, fill: colors.blue, fillOpacity: 0.2, stroke: 'none'}}
-      />
-      
-      {/* Medulla/Spinal Cord (tapering green) */}
-      <path 
-        d="M -20,80 C -20,100, 0,120, 0,140 C 0,120, 20,100, 20,80 Z"
-        style={{...commonStyle, fill: colors.blue, fillOpacity: 0.6}}
-      />
+  const NeurobiologyDiagram = () => (
+    <g transform="translate(250, 700) scale(1.6) rotate(-15)" opacity="0.6">
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <radialGradient id="redCellGradient">
+          <stop offset="0%" stopColor="hsl(0 100% 85% / 0.8)" />
+          <stop offset="50%" stopColor="hsl(350 95% 60% / 0.7)" />
+          <stop offset="100%" stopColor="hsl(340 90% 45% / 0.6)" />
+        </radialGradient>
+      </defs>
 
-      {/* Nerve fibers (yellow) */}
-      <g stroke={colors.yellow} strokeWidth="0.75" fill="none">
-        <path d="M -25, 70 q -15,5 -30,15" />
-        <path d="M -28, 60 q -20,0 -35,-5" />
-        <path d="M -35, 45 q -20,-5 -30,-15" />
-        <path d="M -40, 30 q -15,-10 -20,-25" />
-        
-        <path d="M 25, 70 q 15,5 30,15" />
-        <path d="M 28, 60 q 20,0 35,-5" />
-        <path d="M 35, 45 q 20,-5 30,-15" />
-        <path d="M 40, 30 q 15,-10 20,-25" />
+      {/* Background Noise */}
+      <g>
+        {/* A lot of tiny dots to create texture */}
+        <circle cx="23" cy="45" r="0.8" fill="hsl(240 80% 70%)" opacity="0.3" /> <circle cx="-78" cy="-23" r="1.1" fill="hsl(240 80% 70%)" opacity="0.2" /> <circle cx="90" cy="12" r="0.9" fill="hsl(240 80% 70%)" opacity="0.4" /> <circle cx="-33" cy="88" r="1.2" fill="hsl(240 80% 70%)" opacity="0.25" /> <circle cx="120" cy="-60" r="0.7" fill="hsl(240 80% 70%)" opacity="0.35" /> <circle cx="5" cy="115" r="1" fill="hsl(240 80% 70%)" opacity="0.3" /> <circle cx="-95" cy="70" r="0.8" fill="hsl(240 80% 70%)" opacity="0.4" /> <circle cx="55" cy="-90" r="1.3" fill="hsl(240 80% 70%)" opacity="0.2" /> <circle cx="130" cy="130" r="0.9" fill="hsl(240 80% 70%)" opacity="0.3" /> <circle cx="-140" cy="-140" r="1" fill="hsl(240 80% 70%)" opacity="0.28" />
+        <circle cx="43" cy="-15" r="1.2" fill="hsl(0 80% 70%)" opacity="0.3" /> <circle cx="-58" cy="53" r="0.9" fill="hsl(0 80% 70%)" opacity="0.2" /> <circle cx="110" cy="-42" r="1.1" fill="hsl(0 80% 70%)" opacity="0.4" /> <circle cx="-13" cy="108" r="1" fill="hsl(0 80% 70%)" opacity="0.25" /> <circle cx="100" cy="-80" r="1.3" fill="hsl(0 80% 70%)" opacity="0.35" /> <circle cx="-25" cy="-115" r="0.8" fill="hsl(0 80% 70%)" opacity="0.3" /> <circle cx="-115" cy="90" r="1.2" fill="hsl(0 80% 70%)" opacity="0.4" /> <circle cx="75" cy="-110" r="0.9" fill="hsl(0 80% 70%)" opacity="0.2" /> <circle cx="150" cy="100" r="1.1" fill="hsl(0 80% 70%)" opacity="0.3" /> <circle cx="-120" cy="-100" r="1.3" fill="hsl(0 80% 70%)" opacity="0.28" />
       </g>
       
-      {/* Optic Chiasm and other features */}
-      <path 
-        d="M 0,-45 C -20,-40, -20,-20, 0,-25 C 20,-20, 20,-40, 0,-45 Z"
-        style={{...commonStyle, fill: colors.teal, strokeWidth: 0.75}}
-      />
-      <path 
-        d="M 0, -25 Q 0, -15, 5, -5"
-        stroke={colors.stroke} strokeWidth="0.5" fill="none"
-      />
-      <circle cx="5" cy="-5" r="4" style={{...commonStyle, fill: 'hsl(10, 80%, 60%)'}} />
+      {/* Main Cell Structures */}
+      <g filter="url(#glow)">
+        <g transform="translate(-80, -60)">
+          <ellipse cx="0" cy="0" rx="25" ry="22" fill="url(#redCellGradient)" />
+          <path d="M-20 8 C -35 0, -30 -18, -10 -20 C 12 -25, 25 -12, 25 5 C 20 22, 0 25, -20 8 Z" stroke="hsl(230 80% 60% / 0.3)" strokeWidth="2" fill="none" />
+        </g>
+        <g transform="translate(-30, -80)">
+          <ellipse cx="0" cy="0" rx="26" ry="23" fill="url(#redCellGradient)" />
+        </g>
+        <g transform="translate(20, -55)">
+          <ellipse cx="0" cy="0" rx="28" ry="24" fill="url(#redCellGradient)" />
+        </g>
+        <g transform="translate(-50, -10)">
+          <ellipse cx="0" cy="0" rx="30" ry="25" fill="url(#redCellGradient)" />
+        </g>
+        <g transform="translate(0, 0)">
+          <ellipse cx="0" cy="0" rx="32" ry="28" fill="url(#redCellGradient)" />
+        </g>
+        <g transform="translate(50, -20)">
+          <ellipse cx="0" cy="0" rx="29" ry="26" fill="url(#redCellGradient)" />
+          <path d="M-24 10 C -38 0, -34 -20, -9 -24 C 16 -28, 28 -15, 28 6 C 24 26, -1 28, -24 10 Z" stroke="hsl(230 80% 60% / 0.4)" strokeWidth="2.5" fill="none" />
+        </g>
+        <g transform="translate(10, 45)">
+          <ellipse cx="0" cy="0" rx="33" ry="27" fill="url(#redCellGradient)" />
+        </g>
+        <g transform="translate(65, 30)">
+          <ellipse cx="0" cy="0" rx="31" ry="28" fill="url(#redCellGradient)" />
+        </g>
+         <g transform="translate(110, 10)">
+          <ellipse cx="0" cy="0" rx="26" ry="24" fill="url(#redCellGradient)" />
+           <path d="M-22 8 C -36 -2, -31 -22, -7 -26 C 18 -30, 27 -17, 27 3 C 22 23, -3 25, -22 8 Z" stroke="hsl(230 80% 60% / 0.5)" strokeWidth="3" fill="none" />
+        </g>
+      </g>
     </g>
   );
+
 
   return (
     <svg viewBox="0 0 500 950" className="w-full h-full opacity-60">
@@ -159,9 +169,9 @@ const ArchitectureDiagram = () => {
         <Arrow d="M 415 125 L 445 125" />
         <Arrow d="M 415 215 L 460 295" />
         <Arrow d="M 415 455 L 455 385" />
-        <text x={465} y={500} textAnchor="middle" style={textStyle}>Detections</text>
       </g>
-      <BrainStemDiagram />
+      <NeurobiologyDiagram />
+      <text x={250} y={850} textAnchor="middle" style={{...textStyle, fontSize: '14px'}}>Drosophila optic lobe</text>
     </svg>
   );
 };
