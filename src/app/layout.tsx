@@ -58,56 +58,110 @@ const ArchitectureDiagram = () => {
   const Arrow = ({ d }: {d: string}) => (
     <path d={d} stroke={colors.teal} strokeWidth="1" fill="none" markerEnd="url(#arrow)" />
   );
+  
+  const BrainStemDiagram = () => (
+    <g transform="translate(250, 650) scale(1.5)">
+      {/* Main Thalamus/Diencephalon (purple) */}
+      <path
+        d="M 0, -80 C -50, -120, -80, -80, -40, -50 C -20, -30, 20, -30, 40, -50 C 80, -80, 50, -120, 0, -80 Z"
+        style={{...commonStyle, fill: colors.purple, strokeWidth: 1}}
+      />
+      
+      {/* Midbrain and Pons (teal/green) */}
+      <path 
+        d="M -40,-50 C -60,0, -40,50, -20,80 L 20,80 C 40,50, 60,0, 40,-50 L -40,-50 Z"
+        style={{...commonStyle, fill: colors.blue}}
+      />
+      {/* Pons highlight */}
+      <path 
+        d="M -50,40 C -80,40, -80,0, -50,-10 Q 0,-30, 50,-10 C 80,0, 80,40, 50,40 Z"
+        style={{...commonStyle, fill: colors.blue, fillOpacity: 0.2, stroke: 'none'}}
+      />
+      
+      {/* Medulla/Spinal Cord (tapering green) */}
+      <path 
+        d="M -20,80 C -20,100, 0,120, 0,140 C 0,120, 20,100, 20,80 Z"
+        style={{...commonStyle, fill: colors.blue, fillOpacity: 0.6}}
+      />
+
+      {/* Nerve fibers (yellow) */}
+      <g stroke={colors.yellow} strokeWidth="0.75" fill="none">
+        <path d="M -25, 70 q -15,5 -30,15" />
+        <path d="M -28, 60 q -20,0 -35,-5" />
+        <path d="M -35, 45 q -20,-5 -30,-15" />
+        <path d="M -40, 30 q -15,-10 -20,-25" />
+        
+        <path d="M 25, 70 q 15,5 30,15" />
+        <path d="M 28, 60 q 20,0 35,-5" />
+        <path d="M 35, 45 q 20,-5 30,-15" />
+        <path d="M 40, 30 q 15,-10 20,-25" />
+      </g>
+      
+      {/* Optic Chiasm and other features */}
+      <path 
+        d="M 0,-45 C -20,-40, -20,-20, 0,-25 C 20,-20, 20,-40, 0,-45 Z"
+        style={{...commonStyle, fill: colors.teal, strokeWidth: 0.75}}
+      />
+      <path 
+        d="M 0, -25 Q 0, -15, 5, -5"
+        stroke={colors.stroke} strokeWidth="0.5" fill="none"
+      />
+      <circle cx="5" cy="-5" r="4" style={{...commonStyle, fill: 'hsl(10, 80%, 60%)'}} />
+    </g>
+  );
 
   return (
-    <svg viewBox="0 0 500 750" className="w-full h-full opacity-60">
+    <svg viewBox="0 0 500 950" className="w-full h-full opacity-60">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" fill={colors.teal} />
         </marker>
       </defs>
 
-      {/* Input Image */}
-      <rect x="20" y="240" width="60" height="80" style={{...commonStyle, fill: colors.yellow}} />
-      <text x="50" y="335" textAnchor="middle" style={textStyle}>input</text>
+      <g transform="translate(0, -150)">
+        {/* Input Image */}
+        <rect x="20" y="240" width="60" height="80" style={{...commonStyle, fill: colors.yellow}} />
+        <text x="50" y="335" textAnchor="middle" style={textStyle}>input</text>
 
-      {/* Main Block Chain */}
-      <Arrow d="M 85 280 L 120 280" />
-      <Cuboid x={125} y={230} w={20} h={100} d={20} color={colors.yellow} label="conv1" />
-      <Arrow d="M 170 280 L 190 280" />
-      <Cuboid x={195} y={240} w={20} h={80} d={18} color={colors.blue} label="BRB1" />
-      <Arrow d="M 240 280 L 260 280" />
-      <Cuboid x={265} y={250} w={20} h={60} d={16} color={colors.blue} label="BRB2" />
-      <Arrow d="M 310 280 L 330 280" />
-      <Cuboid x={335} y={260} w={20} h={40} d={14} color={colors.blue} label="BRB3" />
-      <Arrow d="M 380 280 L 400 280" />
-      <Cuboid x={405} y={265} w={20} h={30} d={12} color={colors.blue} label="BRB4" />
+        {/* Main Block Chain */}
+        <Arrow d="M 85 280 L 120 280" />
+        <Cuboid x={125} y={230} w={20} h={100} d={20} color={colors.yellow} label="conv1" />
+        <Arrow d="M 170 280 L 190 280" />
+        <Cuboid x={195} y={240} w={20} h={80} d={18} color={colors.blue} label="BRB1" />
+        <Arrow d="M 240 280 L 260 280" />
+        <Cuboid x={265} y={250} w={20} h={60} d={16} color={colors.blue} label="BRB2" />
+        <Arrow d="M 310 280 L 330 280" />
+        <Cuboid x={335} y={260} w={20} h={40} d={14} color={colors.blue} label="BRB3" />
+        <Arrow d="M 380 280 L 400 280" />
+        <Cuboid x={405} y={265} w={20} h={30} d={12} color={colors.blue} label="BRB4" />
 
-      {/* Skip Connection 1 */}
-      <Arrow d="M 285 250 q -20 -30 -60 -30 l -5 0 q -20 0 -20 20 l 0 20" />
+        {/* Skip Connection 1 */}
+        <Arrow d="M 285 250 q -20 -30 -60 -30 l -5 0 q -20 0 -20 20 l 0 20" />
 
-      {/* Bottom Path */}
-      <Arrow d="M 345 305 l 0 70 q 0 10 -10 10 l -40 0" />
-      <Cuboid x={245} y={370} w={40} h={20} d={10} color={colors.blue} label="BRB2 x 3" />
-      <Arrow d="M 240 380 l -20 0" />
-      <Cuboid x={155} y={370} w={60} h={20} d={10} color={colors.blue} label="BRB2 x 1" />
+        {/* Bottom Path */}
+        <Arrow d="M 345 305 l 0 70 q 0 10 -10 10 l -40 0" />
+        <Cuboid x={245} y={370} w={40} h={20} d={10} color={colors.blue} label="BRB2 x 3" />
+        <Arrow d="M 240 380 l -20 0" />
+        <Cuboid x={155} y={370} w={60} h={20} d={10} color={colors.blue} label="BRB2 x 1" />
 
-      {/* Predictor Heads */}
-      <Arrow d="M 420 260 C 450 240, 460 180, 440 160" />
-      <Cuboid x={360} y={100} w={50} h={50} d={15} color={colors.yellow} label="predictor1" />
+        {/* Predictor Heads */}
+        <Arrow d="M 420 260 C 450 240, 460 180, 440 160" />
+        <Cuboid x={360} y={100} w={50} h={50} d={15} color={colors.yellow} label="predictor1" />
 
-      <Arrow d="M 290 370 l 0 -60 q 0 -20 20 -20 l 40 0 C 400 290, 460 270, 440 250" />
-      <Cuboid x={360} y={190} w={50} h={50} d={15} color={colors.yellow} label="predictor2" />
+        <Arrow d="M 290 370 l 0 -60 q 0 -20 20 -20 l 40 0 C 400 290, 460 270, 440 250" />
+        <Cuboid x={360} y={190} w={50} h={50} d={15} color={colors.yellow} label="predictor2" />
 
-      <Arrow d="M 150 380 C 100 380, 80 450, 150 480 L 355 490" />
-      <Cuboid x={360} y={430} w={50} h={50} d={15} color={colors.yellow} label="predictor3" />
-      
-      {/* Final Output */}
-      <path d="M 450 125 L 450 455 L 480 425 L 480 95 Z" style={{...commonStyle, fill: colors.purple}} />
-      <Arrow d="M 415 125 L 445 125" />
-      <Arrow d="M 415 215 L 460 295" />
-      <Arrow d="M 415 455 L 455 385" />
-      <text x={465} y={500} textAnchor="middle" style={textStyle}>Detections</text>
+        <Arrow d="M 150 380 C 100 380, 80 450, 150 480 L 355 490" />
+        <Cuboid x={360} y={430} w={50} h={50} d={15} color={colors.yellow} label="predictor3" />
+        
+        {/* Final Output */}
+        <path d="M 450 125 L 450 455 L 480 425 L 480 95 Z" style={{...commonStyle, fill: colors.purple}} />
+        <Arrow d="M 415 125 L 445 125" />
+        <Arrow d="M 415 215 L 460 295" />
+        <Arrow d="M 415 455 L 455 385" />
+        <text x={465} y={500} textAnchor="middle" style={textStyle}>Detections</text>
+      </g>
+      <BrainStemDiagram />
     </svg>
   );
 };
