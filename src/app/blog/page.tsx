@@ -15,7 +15,7 @@ export default function BlogPage() {
       </div>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
         {blogPosts.map((post) => (
-          <BlogPostCard key={post.slug} {...post} />
+          <BlogPostCard key={post.slug} {...post} basePath="/blog" />
         ))}
       </div>
     </div>

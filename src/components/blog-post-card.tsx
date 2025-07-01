@@ -20,6 +20,7 @@ type BlogPostCardProps = {
   date: string;
   tags: string[];
   slug: string;
+  basePath: string;
 };
 
 export function BlogPostCard({
@@ -30,12 +31,15 @@ export function BlogPostCard({
   date,
   tags,
   slug,
+  basePath,
 }: BlogPostCardProps) {
+  const href = `${basePath}/${slug}`;
+
   return (
     <Card className="flex flex-col overflow-hidden">
       {imageUrl && (
         <CardHeader className="p-0">
-          <Link href={`/blog/${slug}`} className="block">
+          <Link href={href} className="block">
             <Image
               src={imageUrl}
               alt={title}
@@ -56,14 +60,14 @@ export function BlogPostCard({
           ))}
         </div>
         <CardTitle className="text-xl font-bold font-headline">
-          <Link href={`/blog/${slug}`}>{title}</Link>
+          <Link href={href}>{title}</Link>
         </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardContent>
       <CardFooter className="p-6 pt-0 flex justify-between items-center text-sm text-muted-foreground">
         <span>{date}</span>
         <Link
-          href={`/blog/${slug}`}
+          href={href}
           className="flex items-center gap-1 text-primary hover:underline"
         >
           Read More <ArrowRight className="h-4 w-4" />

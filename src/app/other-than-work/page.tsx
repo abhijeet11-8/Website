@@ -15,7 +15,11 @@ export default function OtherThanWorkPage() {
       </div>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
         {otherThanWorkPosts.map((post) => (
-          <BlogPostCard key={post.slug} {...post} />
+          <BlogPostCard
+            key={post.slug}
+            {...post}
+            basePath="/other-than-work"
+          />
         ))}
       </div>
     </div>
