@@ -23,19 +23,6 @@ export const metadata: Metadata = {
   description: "A personal portfolio, blog, and update feed.",
 };
 
-const NeurobiologyDiagram = () => (
-    <g transform="translate(250, 700)" opacity="0.8">
-      <image 
-        href="/image.png" 
-        width="300" 
-        height="300"
-        x="-150"
-        y="-150"
-        preserveAspectRatio="xMidYMid slice"
-      />
-    </g>
-  );
-
 const ArchitectureDiagram = () => {
   const colors = {
     blue: 'hsl(160, 60%, 45%)',
@@ -122,7 +109,6 @@ const ArchitectureDiagram = () => {
         <Arrow d="M 415 215 L 460 295" />
         <Arrow d="M 415 455 L 455 385" />
       </g>
-      <NeurobiologyDiagram />
     </svg>
   );
 };
@@ -242,6 +228,9 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
     </pre>
     <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
       <ArchitectureDiagram />
+      <div className="absolute bottom-8 right-8 w-[300px] h-[300px] opacity-70">
+        <img src="/image.png" alt="Neurobiology Diagram" className="h-full w-full object-contain" />
+      </div>
     </div>
   </div>
 );
