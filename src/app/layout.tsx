@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto, Lora } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { PageWrapper } from "@/components/page-wrapper";
+import { AppHeader } from "@/components/app-header";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 
 const CodeBackground = () => (
   <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-foreground/10 whitespace-pre-wrap sm:right-2/3">
+    <pre className="absolute inset-y-0 left-8 right-1/2 font-code text-[10px] text-foreground/20 whitespace-pre-wrap sm:right-2/3">
       <code
         dangerouslySetInnerHTML={{
           __html: `<span class="code-bg-token-keyword">import</span> numpy <span class="code-bg-token-keyword">as</span> np
@@ -146,6 +147,7 @@ export default function RootLayout({
     <html lang="en" className={`dark ${roboto.variable} ${lora.variable}`}>
       <body className="font-sans antialiased relative">
         <CodeBackground />
+        <AppHeader />
         <PageWrapper>{children}</PageWrapper>
         <Toaster />
       </body>
