@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 
 const ArchitectureDiagram = () => {
   const colors = {
-    blue: 'hsl(160, 60%, 45%)',
-    yellow: 'hsl(43, 74%, 66%)',
-    purple: 'hsl(280, 65%, 60%)',
-    teal: 'hsl(174, 44.1%, 70%)',
-    text: 'hsl(0, 0%, 63.9%)',
-    stroke: 'hsl(0, 0%, 98%)',
+    blue: 'hsl(var(--chart-1))',
+    yellow: 'hsl(var(--primary))',
+    purple: 'hsl(var(--chart-4))',
+    teal: 'hsl(var(--accent))',
+    text: 'hsl(var(--muted-foreground))',
+    stroke: 'hsl(var(--foreground))',
   };
 
   const commonStyle = {
@@ -60,7 +60,7 @@ const ArchitectureDiagram = () => {
   );
 
   return (
-    <svg viewBox="0 0 500 950" className="w-full opacity-60">
+    <svg viewBox="0 0 500 950" className="mx-auto w-full max-w-sm opacity-60">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" fill={colors.teal} />
@@ -228,7 +228,7 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
     </pre>
     <div className="absolute inset-y-0 right-8 left-1/2 font-code text-[10px] text-muted-foreground whitespace-pre-wrap hidden sm:block sm:left-2/3">
       <ArchitectureDiagram />
-      <div className="absolute bottom-12 right-8 w-[350px] text-center">
+      <div className="absolute bottom-12 right-8 w-full max-w-[350px] text-center">
         <img
           src="/image.png"
           alt="Neurobiology Diagram"
