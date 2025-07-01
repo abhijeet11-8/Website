@@ -25,9 +25,10 @@ export const metadata: Metadata = {
 
 const ArchitectureDiagram = () => {
   const colors = {
+    // Using a more vibrant palette from the dark theme variables
     blue: 'hsl(var(--chart-1))',
-    yellow: 'hsl(var(--primary))',
     purple: 'hsl(var(--chart-4))',
+    hotPink: 'hsl(var(--chart-5))', // A vibrant pink/red to make things pop
     teal: 'hsl(var(--accent))',
     text: 'hsl(var(--muted-foreground))',
     stroke: 'hsl(var(--foreground))',
@@ -69,12 +70,12 @@ const ArchitectureDiagram = () => {
 
       <g transform="translate(0, -150)">
         {/* Input Image */}
-        <rect x="20" y="240" width="60" height="80" style={{...commonStyle, fill: colors.yellow}} />
+        <rect x="20" y="240" width="60" height="80" style={{...commonStyle, fill: colors.purple}} />
         <text x="50" y="335" textAnchor="middle" style={textStyle}>input</text>
 
         {/* Main Block Chain */}
         <Arrow d="M 85 280 L 120 280" />
-        <Cuboid x={125} y={230} w={20} h={100} d={20} color={colors.yellow} label="conv1" />
+        <Cuboid x={125} y={230} w={20} h={100} d={20} color={colors.blue} label="conv1" />
         <Arrow d="M 170 280 L 190 280" />
         <Cuboid x={195} y={240} w={20} h={80} d={18} color={colors.blue} label="BRB1" />
         <Arrow d="M 240 280 L 260 280" />
@@ -95,16 +96,16 @@ const ArchitectureDiagram = () => {
 
         {/* Predictor Heads */}
         <Arrow d="M 420 260 C 450 240, 460 180, 440 160" />
-        <Cuboid x={360} y={100} w={50} h={50} d={15} color={colors.yellow} label="predictor1" />
+        <Cuboid x={360} y={100} w={50} h={50} d={15} color={colors.hotPink} label="predictor1" />
 
         <Arrow d="M 290 370 l 0 -60 q 0 -20 20 -20 l 40 0 C 400 290, 460 270, 440 250" />
-        <Cuboid x={360} y={190} w={50} h={50} d={15} color={colors.yellow} label="predictor2" />
+        <Cuboid x={360} y={190} w={50} h={50} d={15} color={colors.hotPink} label="predictor2" />
 
         <Arrow d="M 150 380 C 100 380, 80 450, 150 480 L 355 490" />
-        <Cuboid x={360} y={430} w={50} h={50} d={15} color={colors.yellow} label="predictor3" />
+        <Cuboid x={360} y={430} w={50} h={50} d={15} color={colors.hotPink} label="predictor3" />
         
         {/* Final Output */}
-        <path d="M 450 125 L 450 455 L 480 425 L 480 95 Z" style={{...commonStyle, fill: colors.purple}} />
+        <path d="M 450 125 L 450 455 L 480 425 L 480 95 Z" style={{...commonStyle, fill: colors.hotPink}} />
         <Arrow d="M 415 125 L 445 125" />
         <Arrow d="M 415 215 L 460 295" />
         <Arrow d="M 415 455 L 455 385" />
