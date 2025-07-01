@@ -237,7 +237,7 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
       <ArchitectureDiagram />
       <div className="absolute bottom-12 right-0 w-full max-w-[350px] text-center">
         <img
-          src="/nextn/image.png"
+          src="/website/public/image.png"
           alt="Neurobiology Diagram"
           className="h-auto w-full object-contain"
           style={{
