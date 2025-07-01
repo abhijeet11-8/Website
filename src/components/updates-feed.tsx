@@ -7,7 +7,6 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
@@ -25,7 +24,6 @@ export function UpdatesFeed() {
         <CardTitle className="text-2xl font-headline bg-gradient-to-r from-chart-2 via-chart-4 to-chart-5 bg-clip-text text-transparent">
           Recent Updates
         </CardTitle>
-        <CardDescription>A feed of my latest work and projects.</CardDescription>
       </CardHeader>
       <CardContent className="pt-0">
         <div className="space-y-6">
