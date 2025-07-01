@@ -27,7 +27,7 @@ export const portfolioData = {
    */
   name: "Abhijeet Vikram",
   bio: 'Undergrad Data Science @ IISER Pune with interests in Deep Learning, Physics Inspired NNs and AI for Quantum.',
-  avatarUrl: "WhatsApp_Image_2025-07-02_at_04.41.33.jpeg",
+  avatarUrl: "website/profile.png",
 
   /**
    * --- RESUME & CONTACT ---
