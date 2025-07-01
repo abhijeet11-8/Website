@@ -12,8 +12,8 @@ export function ProfileCard({ name, bio, avatarUrl }: ProfileCardProps) {
   return (
     <Card>
       <CardContent className="p-6">
-        <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
-          <Avatar className="h-24 w-24 md:h-28 md:w-28">
+        <div className="flex flex-row items-center gap-4 text-left md:gap-6">
+          <Avatar className="h-20 w-20 shrink-0 md:h-28 md:w-28">
             <AvatarImage
               src={avatarUrl}
               alt={name}
