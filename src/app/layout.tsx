@@ -43,7 +43,7 @@ const ArchitectureDiagram = () => {
   const textStyle = {
     fill: colors.text,
     fontSize: '12px',
-    fontFamily: 'var(--font-code)',
+    fontFamily: 'var(--font-sans)',
   };
 
   const Cuboid = ({ x, y, w, h, d, color, label, label2 }: {x: number, y: number, w: number, h: number, d: number, color: string, label?: string, label2?: string}) => (
@@ -240,7 +240,7 @@ prediction = <span class="text-accent">predict_single_image</span>(model, sample
             WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
           }}
         />
-        <p className="mt-2 text-xs text-muted-foreground">Fig 2. Barell Cells</p>
+        <p className="mt-2 text-xs text-muted-foreground font-sans">Fig 2. Barell Cells</p>
       </div>
     </div>
   </div>
