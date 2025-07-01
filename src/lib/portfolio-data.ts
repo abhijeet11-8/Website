@@ -35,7 +35,7 @@ export const portfolioData = {
    *   folder in your project and the URL will be "/your-resume-filename.pdf".
    * - `contact`: Your email and social media links.
    */
-  resumeUrl: "/nextn/placeholder-resume.pdf",
+  resumeUrl: "/website/placeholder-resume.pdf",
   contact: {
     email: "abhijeet.vikram@students.iiserpune.ac.in",
     github: "https://github.com/abhijeet11-8",
