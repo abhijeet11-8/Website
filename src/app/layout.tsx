@@ -5,6 +5,7 @@ import { Roboto, Lora } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { PageWrapper } from "@/components/page-wrapper";
 import { AppHeader } from "@/components/app-header";
+import { portfolioData } from "@/lib/portfolio-data";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -19,9 +20,36 @@ const lora = Lora({
   variable: "--font-headline",
 });
 
+const siteTitle = `${portfolioData.name} | Personal Portfolio`;
+const siteDescription = portfolioData.bio;
+
 export const metadata: Metadata = {
-  title: "Abhijeet",
-  description: "A personal portfolio, blog, and update feed.",
+  metadataBase: new URL("https://abhijeet11-8.github.io/website"),
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: "https://abhijeet11-8.github.io/website",
+    siteName: `${portfolioData.name}'s Portfolio`,
+    images: [
+      {
+        url: "/profile.png",
+        width: 1200,
+        height: 630,
+        alt: portfolioData.name,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/profile.png"],
+    creator: `@${portfolioData.contact.github.split("/").pop()}`,
+  },
 };
 
 const ArchitectureDiagram = () => {
