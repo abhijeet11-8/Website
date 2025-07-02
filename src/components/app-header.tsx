@@ -71,7 +71,7 @@ export function AppHeader() {
 
   return (
     <header>
-      <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between p-4 md:p-8">
+      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between p-4 md:p-8">
         <Link
           href="/"
           className="flex items-center gap-2"
