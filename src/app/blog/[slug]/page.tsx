@@ -3,6 +3,7 @@ import { blogPosts } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
@@ -39,23 +40,27 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <p className="text-sm text-muted-foreground">{post.date}</p>
       </div>
 
-      <div className="prose prose-invert mx-auto max-w-none lg:prose-lg">
-        <p>{post.description}</p>
-        <p>
-          This is a placeholder for the full blog post content. In a real
-          application, you would fetch the full content for the blog post here,
-          perhaps from a Markdown file or a CMS.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
+      <Card className="bg-card/50 backdrop-blur-sm">
+        <CardContent className="p-6 md:p-8">
+          <div className="prose prose-invert mx-auto max-w-none lg:prose-lg">
+            <p>{post.description}</p>
+            <p>
+              This is a placeholder for the full blog post content. In a real
+              application, you would fetch the full content for the blog post
+              here, perhaps from a Markdown file or a CMS.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </article>
   );
 }
