@@ -1,11 +1,16 @@
-
 import { blogPosts } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function BlogPostPage({ params }: PageProps) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
